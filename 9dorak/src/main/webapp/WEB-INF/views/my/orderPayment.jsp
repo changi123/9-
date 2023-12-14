@@ -20,9 +20,6 @@
 		$.ajax({
 			url : "paymentList.do",
 			success : function(responseData) {
-				if(responseData.trim() == "") {
-					$("#here").html("결제내역이 존재하지 않습니다.");
-				}else {
 					$("#here").html(responseData);
 				}				
 			}

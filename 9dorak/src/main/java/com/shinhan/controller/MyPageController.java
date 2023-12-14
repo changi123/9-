@@ -73,6 +73,7 @@ public class MyPageController {
 	}
 	
 	
+	
 	//마이페이지 -주문/결제내역 페이지
 	@GetMapping("orderDetails.do")
 	public String orderDetails(Model model, HttpSession session) {
@@ -83,7 +84,7 @@ public class MyPageController {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		List<Map<String, Object>> orderList = mService.orderList(loginmem.getMem_id());
 		model.addAttribute("orderList",orderList);
-		return "my/myorderList";
+		return "my/myOrderList";
 	}
 		
 	//마이페이지 -결제내역 페이지
@@ -104,6 +105,15 @@ public class MyPageController {
 	public String orderCancel(Model model, HttpSession session) {
 		return "my/orderCancel";
 	}
+	@GetMapping("cancelList.do")
+	public String cancelList(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		List<Map<String, Object>> cancelList = mService.cancelList(loginmem.getMem_id());
+		model.addAttribute("cancelList",cancelList);
+		return "my/myCancelList";
+	}
+	
+	
 	
 	
 	@RequestMapping(value = "updateMember.do", produces = "text/plain;charset=utf-8")
