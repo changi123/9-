@@ -46,4 +46,16 @@ public class ChallengeService {
 		return dao.list(ChallengeVO);
 	}
 
+	public int getLikecheck(ChalllikeVO challlike) {
+		return dao.getLikecheck(challlike);
+	}
+
+	public int insertlikeChall(ChalllikeVO challlike) {
+		return dao.insertlikeChall(challlike);
+	}
+
+	public int delelelikeChall(ChalllikeVO challlike) {
+		return dao.delelelikeChall(challlike);
+	}
+
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.shinhan.dto.EventVO;
+import com.shinhan.dto.ProVO;
 import com.shinhan.model.EventService;
 
 @Controller
@@ -20,12 +21,11 @@ public class EventController {
 
 	private static final Logger logger = LoggerFactory.getLogger(EventController.class);
 
-	@GetMapping("freelunchbox.do")
-	public String event1(Model model) {
+	@GetMapping("freelunchbox.do") public String event1(Model model, ProVO pro) {
 		List<EventVO> elist = eService.selectAll();
 		model.addAttribute("elist", elist);
 		return "event/freelunchbox";
-	}
+	 }
 	
 	@GetMapping("makelunchbox.do")
 	public String event2(Model model) {

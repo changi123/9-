@@ -2,6 +2,7 @@ package com.shinhan.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -94,7 +97,6 @@ public class DoranController {
 
 	@GetMapping("doranUpload.do")
 	public String doranUpload(Model model) {
-		System.out.println("업로드 페이지로 이동");
 		return "doran/doranUpload";
 	}
 
@@ -135,19 +137,39 @@ public class DoranController {
 		dService.insertDoran(doran);
 		return "redirect:/doran/doran.do";
 	}
-	
+
 	@PostMapping("uploadComment.do")
-	public String uploadComment(@RequestParam String newComment, @RequestParam int doranNo) {
-	    System.out.println("Received comment from frontend: " + newComment);
-	    List<CommentVO> clist = dService.selectComment(); 
-	    CommentVO comment = new CommentVO();
-	    comment.setComment_cont(newComment);
-	    comment.setDoran_no(doranNo);
-	    comment.setComment_no(clist.size()+1);
-	    dService.insertComment(comment);
-	    return "redirect:/doran/doranFeedDetail";
+	@ResponseBody
+	public Map<String, Object> uploadComment(@RequestParam String newComment, @RequestParam int doranNo,
+			HttpSession session) {
+
+		Map<String, Object> response = new HashMap<>();
+		try {
+			System.out.println("Received comment from frontend: " + newComment);
+			List<CommentVO> clist = dService.selectComment();
+			MemVO memVO = (MemVO) session.getAttribute("loginmem");
+			String memId = memVO.getMem_id();
+			CommentVO comment = new CommentVO();
+			comment.setComment_cont(newComment);
+			comment.setDoran_no(doranNo);
+			comment.setComment_no(clist.size() + 1);
+			comment.setMem_id(memId);
+			dService.insertComment(comment);
+
+			List<CommentVO> updatedComments = dService.selectAllCommentAbout(doranNo);
+
+			// 업데이트된 댓글 목록을 응답에 추가
+			response.put("comments", updatedComments);
+			response.put("success", true);
+		} catch (Exception e) {
+			response.put("success", false);
+			response.put("error", e.getMessage());
+		}
+		return response;
+
+		// return"redirect:/doran/doranFeedDetail/"+doranNo+"?timestamp="+System.currentTimeMillis();
 	}
-	
+
 	@PostMapping("doranUpload.do")
 	public String handleDoranUpload(DoranVO doran, @RequestParam MultipartFile singleFile, HttpServletRequest request,
 			HttpSession session) {
@@ -203,9 +225,6 @@ public class DoranController {
 		List<CommentVO> comments = dService.selectAllCommentAbout(doranNo);
 		model.addAttribute("doran", doran);
 		model.addAttribute("comments", comments);
-		System.out.println("댓글 사이즈 : " + comments.size());
-		System.out.println("게시물 상세로 넘어간다" + doran);
-		System.out.println(comments);
 		return "/doran/doranFeedDetail";
 	}
 
@@ -236,5 +255,30 @@ public class DoranController {
 		model.addAttribute("dlist", dlist);
 		return "doran/doran_ajax";
 	}
+
+	@PostMapping("updateViewCount.do")
+	public ResponseEntity<String> updateView(@RequestParam int doranNo) {
+		try {
+			dService.updateViewCount(doranNo);
+			return ResponseEntity.ok("조회수가 증가했습니다.");
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("조회수 증가 중 에러가 발생했습니다.");
+		}
+	}
+	
+	@PostMapping("deleteDoran.do")
+	@ResponseBody
+	public Map<String, Object> deleteDoran(@RequestParam int doranNo) {
+	    Map<String, Object> response = new HashMap<>();
+	    try {
+	        dService.deleteDoran(doranNo);
+	        response.put("success", true);
+	    } catch (Exception e) {
+	        response.put("success", false);
+	        response.put("error", e.getMessage());
+	    }
+	    return response;
+	}
+
 
 }

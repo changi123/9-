@@ -88,20 +88,14 @@
 				<div class="feeds">
 					<div class="group-3">
 						<div class="overlap-group-2">
-							<button class="detailfeed_deleteBtn">
-								<img class="detailfeed_deleteBtnImg" src="${cpath }/resources/images/doran/detailfeed_deleteBtn.png" />
+							<button class="detailfeed_deleteBtn" onclick="deleteDoran(${doran.doran_no})">
+								<img class="detailfeed_deleteBtnImg"
+									src="${cpath}/resources/images/doran/detailfeed_deleteBtn.png" />
 							</button>
 							<img class="unsplash"
 								src="${cpath }/resources/upload/${doran.doran_image}" />
 							<p class="p">${doran.doran_cont}</p>
-							<%-- <p>${doran.doran_no}</p>
-							<p>멤버 아이디 ${doran.mem_id}</p>
-							<p>${doran.doran_title}</p>
-							<p>${doran.doran_cont}</p>
-							<p>${doran.doran_date}</p>
-							<p>조회수${doran.doran_view}</p>
-							<p>좋아요 수${doran.dlike}</p>
-							<p>댓글수${doran.dcomment}</p> --%>
+
 
 
 							<div class="doran-underInfo">
@@ -124,11 +118,7 @@
 								</div>
 								<div class="doran-uploadInfo-time">${doran.doran_date}</div>
 
-								<%-- <c:forEach items="${comments}" var="comment" varStatus="loop">
-									<p>댓글 번호 ${comment.comment_no}</p>
-									<p>댓글 내용 ${comment.comment_cont}</p>
-									<p>댓글 날짜 ${comment.comment_date}</p>
-								</c:forEach> --%>
+
 							</div>
 
 							<div class="group-4">
@@ -155,71 +145,27 @@
 							<div class="frame-5">
 								<div class="frame-wrapper">
 									<div class="frame-6">
-									
-									<c:forEach items="${comments}" var="comment" varStatus="loop">
-										<div class="comment">
-											<div class="reply">
-												<div class="comments-info">
-												<div class="text-wrapper-14">Name</div>
-												<div class="text-wrapper-16">${comment.comment_date}</div>
-												</div>
-												<div class="message">
-													<div class="overlap-group-3">
-														<div class="text">
-															<div class="text-wrapper-15">${comment.comment_cont}</div>
+
+										<c:forEach items="${comments}" var="comment" varStatus="loop">
+											<div class="comment">
+												<div class="reply">
+													<div class="comments-info">
+														<div class="text-wrapper-14">${comment.mem_id}</div>
+														<div class="text-wrapper-16">${comment.comment_date}</div>
+													</div>
+													<div class="message">
+														<div class="overlap-group-3">
+															<div class="text">
+																<div class="text-wrapper-15">${comment.comment_cont}</div>
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-									</c:forEach>
-									
-										<!-- <div class="comment">
-											<div class="reply">
-												<div class="text-wrapper-14">Name</div>
-												<div class="message">
-													<div class="overlap-group-3">
-														<div class="text">
-															<div class="text-wrapper-15">Here’s some
-																feedback...</div>
-														</div>
-														<img class="tail" src="img/tail-3.svg" />
-													</div>
-												</div>
-											</div>
-											<div class="text-wrapper-16">2023.11.22</div>
-										</div>
-										<div class="comment">
-											<div class="reply">
-												<div class="text-wrapper-14">Name</div>
-												<div class="message">
-													<div class="overlap-group-3">
-														<div class="text">
-															<div class="text-wrapper-15">Here’s some
-																feedback...</div>
-														</div>
-														<img class="tail" src="img/tail.svg" />
-													</div>
-												</div>
-											</div>
-											<div class="text-wrapper-16">2023.11.22</div>
-										</div>
-										<div class="comment">
-											<div class="reply">
-												<div class="text-wrapper-14">Name</div>
-												<div class="message">
-													<div class="overlap-group-3">
-														<div class="text">
-															<div class="text-wrapper-15">Here’s some
-																feedback...</div>
-														</div>
-														<img class="tail" src="img/tail-4.svg" />
-													</div>
-												</div>
-											</div>
-											<div class="text-wrapper-16">2023.11.22</div>
-										</div> -->
-									</div><!-- frame-6 -->
+										</c:forEach>
+
+									</div>
+									<!-- frame-6 -->
 								</div>
 							</div>
 							<div class="group-6">
@@ -237,7 +183,9 @@
 											<div class="group-7">
 												<div class="overlap-group-5">
 													<div class="rectangle"></div>
-													<button class="text-wrapper-19" onclick="commentSubmit()"><span class="comment-span">댓글달기</span></button>
+													<button class="text-wrapper-19" onclick="commentSubmit()">
+														<span class="comment-span">댓글달기</span>
+													</button>
 												</div>
 											</div>
 										</div>
@@ -307,7 +255,10 @@
 						<div class="card">
 							<div class="frame-7">
 								<div class="ellipsis-wrapper">
-									<div class="ellipsis"><img class="ellipsis-img" src="${cpath }/resources/images/doran/doran_logo.png" /></div>
+									<div class="ellipsis">
+										<img class="ellipsis-img"
+											src="${cpath }/resources/images/doran/doran_logo.png" />
+									</div>
 								</div>
 							</div>
 							<div class="tab">
@@ -383,8 +334,7 @@
 					<div class="footer-text-wrapper-7">Opening Restaurant</div>
 					<div class="footer-group-3">
 						<div class="footer-text-wrapper-3">Sat-Wet: 09:00am-10:00PM</div>
-						<div class="footer-text-wrapper-3">Thursday:
-							09:00am-11:00PM</div>
+						<div class="footer-text-wrapper-3">Thursday: 09:00am-11:00PM</div>
 						<div class="footer-text-wrapper-3">Friday: 09:00am-8:00PM</div>
 					</div>
 				</div>
@@ -411,24 +361,110 @@
 			    }
 
 			    var commentText = document.getElementById('comment').value;
-			    console.log(commentText); // Use console.log for debugging
+			   
 
 			    $.ajax({
 			        url: "${cpath}/doran/uploadComment.do",
-			        method: "POST", // Specify the HTTP method
+			        method: "POST",
 			        data: {
 			            "newComment": commentText,
-			            "doranNo" : ${doran.doran_no}
+			            "doranNo": ${doran.doran_no}
 			        },
 			        success: function (responseData) {
-			            console.log("성공 결과: ", responseData);
+			            if (responseData.success) {
+			               
+			                updateComments(responseData.comments);
+
+			                document.getElementById('comment').value = "";
+			            } else {
+			                
+			                alert("댓글 업데이트에 실패했습니다. 에러 메시지: " + responseData.error);
+			            }
 			        },
 			        error: function () {
 			            console.error("에러가 발생했습니다 ! 다시 시도해 주세요");
 			        }
 			    });
 			}
+
+			// 댓글을 업데이트하는 함수
+			function updateComments(comments) {
+			    // 기존 댓글을 삭제
+			    $(".frame-6").empty();
+
+			    // 새로운 댓글을 추가
+			    for (var i = 0; i < comments.length; i++) {
+			        var comment = comments[i];
+			        var commentHtml = generateCommentHtml(comment);
+			        $(".frame-6").append(commentHtml);
+			    }
+			}
+
 			
+			function generateCommentHtml(comment) {
+			    // 날짜를 읽기 쉬운 형태로 변환
+			    var commentDate = new Date(comment.comment_date).toLocaleString();
+			
+			    
+			    var html = '<div class="comment">' +
+			        '<div class="reply">' +
+			        '<div class="comments-info">' +
+			        '<div class="text-wrapper-14">' + comment.mem_id + '</div>' +
+			        '<div class="text-wrapper-16">' + commentDate + '</div>' +
+			        '</div>' +
+			        '<div class="message">' +
+			        '<div class="overlap-group-3">' +
+			        '<div class="text">' +
+			        '<div class="text-wrapper-15">' + comment.comment_cont + '</div>' +
+			        '</div>' +
+			        '</div>' +
+			        '</div>' +
+			        '</div>' +
+			        '</div>';
+			
+			    return html;
+			}
+			
+			// 삭제 버튼 숨기기/보이기
+			$(document).ready(function() {
+			    var loggedInUser = "${sessionScope.loginmem.mem_id}";
+			    var Author = "${doran.mem_id}";
+			    if (loggedInUser === Author) {
+			        $(".detailfeed_deleteBtn").show();
+			    } else {
+			        $(".detailfeed_deleteBtn").hide();
+			    }
+			});
+			
+			function deleteDoran(doranNo) {
+			    if (confirm("게시글을 정말 삭제하시겠습니까?")) {
+			        $.ajax({
+			            url: "${cpath}/doran/deleteDoran.do",
+			            type: "POST",
+			            data: {
+			                "doranNo": doranNo
+			            },
+			            success: function (responseData) {
+			                if (responseData.success) {
+			                    
+			                    alert("게시글이 삭제되었습니다.");
+			                    window.location.href = "${cpath}/doran/doran.do";
+			                   
+			                } else {
+			                    
+			                    alert("게시글 삭제에 실패했습니다. 에러 메시지: " + responseData.error);
+			                }
+			            },
+			            error: function () {
+			                console.error("게시글 삭제 중 에러가 발생했습니다.");
+			            }
+			        });
+			    }
+			}
+
+
+			
+						
 			
 			</script>
 

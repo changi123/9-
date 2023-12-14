@@ -72,6 +72,31 @@
 		FROM
 		challenge
 	</select>
+	
+	<select id="getLikecheck" resultType="int" parameterType="challlikevo">
+		SELECT
+		COUNT(*)
+		FROM
+		challlike
+		where 
+		mem_id = #{mem_id} and
+		challenge_no = #{challenge_no}
+	</select>
+	
+	<insert id="insertlikeChall" parameterType="challlikevo">
+		INSERT INTO challlike (
+		challenge_no,
+		mem_id
+		) VALUES (
+		#{challenge_no},
+		#{mem_id}
+		)
+	</insert>
+	
+	<delete id="delelelikeChall" parameterType="challlikevo">
+		DELETE FROM challlike
+		where challenge_no = #{challenge_no}
+	</delete>
 
 
 	<!-- <select id="list" resultType="hashMap"> SELECT * FROM ( <![CDATA[SELECT 

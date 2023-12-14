@@ -160,22 +160,22 @@ li {
 }
 
 #event_menu ul {
-	width: 800px;
+	width: 686px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
 #event_menu ul li {
 	float: left;
-	width: 20%;
-	height: 50px;
+	/* width: 20%; */
+	height: 73px;
 	line-height: 50px;
 	text-align: center;
 }
 
 #event_menu ul li a {
 	display: block;
-	padding: 10px; /* 상하좌우에 동일한 padding 값 적용 */
+	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
 	text-decoration: none; /* 링크에 밑줄 제거 */
 	color: black; /* 기본 텍스트 색상 지정 */
 	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
@@ -193,7 +193,7 @@ hr {
 	width: 80%;
 	background: #a0a0a0;
 	margin: 0 auto;
-	height: 2px;
+	height: 1px;
 	border: 0;
 }
 
@@ -211,11 +211,11 @@ hr {
 }
 
 .e50_18 {
-	width: 1344px;
-	height: 971px;
-	position: absolute;
-	left: 48px;
-	top: 90px;
+    width: 1344px;
+    height: 971px;
+    position: absolute;
+    left: 43px;
+    top: 70px;
 }
 
 .e50_19 {
@@ -234,12 +234,17 @@ hr {
 	height: 48px;
 	text-align: center;
 	font-size: 3rem;
-	font-weight: 700; } .e50_21 {
-	margin-top: 2.5rem; width : 45rem;
-	font-weight: 700;
-	text-align: center;
-	font-size: 1.6rem;
-	width: 45rem;
+	font-weight: 700; } 
+	
+.e50_21 {
+    position: relative;
+    margin-top: 2.5rem;
+    width: 45rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.6rem;
+    width: 45rem;
+    top: -29px;
 }
 
 }
@@ -277,7 +282,7 @@ hr {
 	border-top-right-radius: 30px;
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
-	background-image: url(../images/lunchbox.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -300,7 +305,7 @@ hr {
 	border-top-right-radius: 30px;
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
-	background-image: url(../images/lunchbox.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -320,7 +325,7 @@ hr {
 	left: 0px;
 	top: 0px;
 	border-radius: 30px;
-	background-image: url(../images/lunchbox.png);
+	background-image: url(../images/menu/food.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }

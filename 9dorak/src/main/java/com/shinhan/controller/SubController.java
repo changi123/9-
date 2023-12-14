@@ -20,6 +20,7 @@ public class SubController {
 	
 	@Autowired
 	SubService subService;
+	@Autowired
 	MenuService mService;
 
 	private static final Logger logger = LoggerFactory.getLogger(SubController.class);

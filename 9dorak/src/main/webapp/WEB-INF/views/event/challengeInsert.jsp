@@ -16,18 +16,70 @@ String contextPath = request.getContextPath();
 <link rel="stylesheet" href="${cpath}/resources/css/styleguide.css?d"
 	type="text/css" />
 <link rel="stylesheet"
-	href="${cpath}/resources/css/challengeStyle3.css?d" type="text/css" />
+	href="${cpath}/resources/css/challengeInsertStyle.css?d" type="text/css" />
 	
 <link rel="shortcut icon" href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 </head>
 <body>
+<header class="header">
+			<div class="top-nav">
+				<div class="navbar">
+					<div class="text-event"
+					OnClick="location.href ='${pageContext.request.contextPath}/event/challenge.do'" style="cursor: pointer;">
+					이벤트</div>
+					<div class="text-menu"
+					OnClick="location.href ='${pageContext.request.contextPath}/menu/menu.do'" style="cursor: pointer;">
+					메뉴보기</div>
+					<div class="text-subscribe"
+					OnClick="location.href ='${pageContext.request.contextPath}/sub/sub.do'" style="cursor: pointer;">
+					구독하기</div>
+					<div class="text-yomo"
+					OnClick="location.href ='${pageContext.request.contextPath}/yomo/notice.do'" style="cursor: pointer;">
+					요모조모</div>
+					<div class="text-doran"
+					OnClick="location.href ='${pageContext.request.contextPath}/doran/doran.do'" style="cursor: pointer;">
+					도란도란</div>
+				</div>
+				<img class="untitled-2"
+					src="${cpath}/resources/images/main/header-logo.png" />
+				<div class="div-3">
+					<div class="text-wrapper-28"><a OnClick="location.href ='${pageContext.request.contextPath}/login/loginForm.do'" style="cursor: pointer;">로그인</a>
+					 | 
+					 <a OnClick="location.href ='${pageContext.request.contextPath}/register/registerType.do'" style="cursor: pointer;">회원가입</a></div>
+					<div class="group-20" OnClick="location.href ='${pageContext.request.contextPath}/wallet/basket.do'" style="cursor: pointer;">
+						<div class="header-overlap-group-3">
+							<img class="header-group-21"
+								src="${cpath}/resources/images/main/header-cart.png" />
+							<div class="ellipse-light"></div>
+							<!-- <div class="text-wrapper-29">2</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="event_menu">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/event/challenge.do">챌린지 ZONE</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/freelunchbox.do">도시락
+						무료 체험</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/makelunchbox.do">도시락
+						만들9</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/friendreco.do">친구
+						추천</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/event/friendadd.do">친구
+						추가</a></li>
+			</ul>
+		</div>
+		<hr>
 	<div class="div-wrapper">
-		<div class="div">
 			<div class="frame-2">
 				<div class="frame-3">
 					<div class="frame-4">
-						<div class="text-wrapper-3">챌린지 참여하기</div>
 						<img class="line" src="img/line-5.svg" />
 					</div>
 				</div>
@@ -39,6 +91,7 @@ String contextPath = request.getContextPath();
 							enctype="multipart/form-data">
 							<!-- 제목 -->
 							<div class="group">
+							<div class="text-wrapper-3">챌린지 글쓰기</div>
 								<div class="overlap-group-2">
 									<div class="input-wrapper">
 										<div class="input">
@@ -127,7 +180,9 @@ document.addEventListener("DOMContentLoaded", function() {
 					</div>
 				</div>
 			</div>
-			<footer class="footer">
+			<img class="group-10" src="img/group-481746.png" />
+		</div>
+					<footer class="footer">
 				<div class="footer-company-loco">
 					<div class="footer-company">
 						<p class="footer-text-wrapper">9도락 엄청 맛있는 레시피로 사랑을 담아서 만들었어요
@@ -192,62 +247,5 @@ document.addEventListener("DOMContentLoaded", function() {
 					</div>
 				</div>
 			</footer>
-			<img class="group-10" src="img/group-481746.png" />
-			<div class="navbar">
-				<div class="element-aug"
-					onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-					style="cursor: pointer;">챌린지 ZONE</div>
-				<div class="text-wrapper-11"
-					onclick="location.href='${pageContext.request.contextPath}/event/freelunchbox.do'"
-					style="cursor: pointer;">도시락 무료 체험</div>
-				<div class="element-sep"
-					onclick="location.href='${pageContext.request.contextPath}/event/makelunchbox.do'"
-					style="cursor: pointer;">도시락 만들9</div>
-				<div class="text-wrapper-11"
-					onclick="location.href='${pageContext.request.contextPath}/event/friendreco.do'"
-					style="cursor: pointer;">친구 추천</div>
-				<div class="text-wrapper-11"
-					onclick="location.href='${pageContext.request.contextPath}/event/friendadd.do'"
-					style="cursor: pointer;">친구 추가</div>
-			</div>
-			<header class="header">
-				<div class="top-nav">
-					<div class="navbar-2">
-						<div class="text-wrapper-12"
-							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-							style="cursor: pointer;">이벤트</div>
-						<div class="text-wrapper-13"
-							onclick="location.href='${pageContext.request.contextPath}/menu/menu.do'"
-							style="cursor: pointer;">메뉴보기</div>
-						<div class="text-wrapper-14"
-							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-							style="cursor: pointer;">구독하기</div>
-						<div class="text-wrapper-15"
-							onclick="location.href='${pageContext.request.contextPath}/event/challenge.do'"
-							style="cursor: pointer;">요모조모</div>
-						<div class="text-wrapper-16"
-							onclick="location.href='${pageContext.request.contextPath}/doran/doran.do'"
-							style="cursor: pointer;">도란도란</div>
-					</div>
-					<img class="untitled-2" src="img/untitled-1-1.png" />
-					<div class="div-2">
-						<div class="text-wrapper-17">
-							<span><a
-								href="${pageContext.request.contextPath}/login/login.do">로그인</a></span>
-							| <span><a
-								href="${pageContext.request.contextPath}/register/registerType.do">회원가입</a></span>
-						</div>
-						<div class="group-11">
-							<div class="overlap-group-5">
-								<img class="group-12" src="img/group-1.svg" />
-								<div class="ellipse"></div>
-								<div class="text-wrapper-18">2</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
-		</div>
-	</div>
 </body>
 </html>

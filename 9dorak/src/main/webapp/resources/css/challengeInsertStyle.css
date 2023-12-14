@@ -10,18 +10,20 @@
 }
 
 .div-wrapper .div {
-	background-color: var(- -white);
-	width: 1440px;
-	height: 2000px;
-	position: relative;
+    background-color: var(- -white);
+    width: 1440px;
+    height: 2000px;
+    position: relative;
+    top: -245px;
 }
 
 .div-wrapper .overlap {
-	position: absolute;
-	width: 1200px;
-	height: 1038px;
-	top: 363px;
-	left: 120px;
+    position: absolute;
+    width: 1200px;
+    height: 1038px;
+    top: 270px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .div-wrapper .group {
@@ -311,7 +313,6 @@
 	position: absolute;
 	top: 271px;
 	left: 120px;
-	box-shadow: 5px 4px 10px #00000040;
 }
 
 .div-wrapper .frame-3 {
@@ -342,6 +343,8 @@
 	font-size: 30px;
 	letter-spacing: 0;
 	line-height: normal;
+	left: 241px;
+	top: 62px;
 }
 
 .div-wrapper .line {
@@ -906,4 +909,47 @@
 	border-radius: 4px;
 	color: white;
 	cursor: pointer;
+}
+
+#event_menu {
+	margin-top: 100px;
+}
+
+#event_menu ul {
+	width: 686px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#event_menu ul li {
+	float: left;
+	/* width: 20%; */
+	height: 73px;
+	line-height: 50px;
+	text-align: center;
+	list-style-type: none; /* 목록 스타일 없애기 */
+}
+
+#event_menu ul li a {
+	display: block;
+	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
+	text-decoration: none; /* 링크에 밑줄 제거 */
+	color: black; /* 기본 텍스트 색상 지정 */
+	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
+}
+
+#event_menu ul li:first-child a {
+	color: blue; /* 첫 번째 a 태그에만 파란색 적용 */
+}
+
+#event_menu ul li a:hover {
+	color: blue;
+}
+hr {
+    top: -10px;
+    width: 80%;
+    background: #a0a0a0;
+    margin: 0 auto;
+    height: 1px;
+    border: 0;
 }

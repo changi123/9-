@@ -107,7 +107,24 @@
     
     function toFeedDetail(doranNum) {
         alert(doranNum);
+        increaseViewCount(doranNum); // 조회수 증가
         window.location.href = '${cpath}/doran/doranFeedDetail/' + doranNum;
+    }
+    
+    function increaseViewCount(doranNum) {
+        $.ajax({
+            url: "${cpath}/doran/updateViewCount.do",
+            method: "POST",
+            data: {
+                "doranNo": doranNum
+            },
+            success: function(responseData) {
+                console.log("조회수가 증가했습니다.");
+            },
+            error: function() {
+                console.error("조회수 증가 중 에러가 발생했습니다.");
+            }
+        });
     }
 
 </script>

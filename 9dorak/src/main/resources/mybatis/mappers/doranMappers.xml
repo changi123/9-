@@ -198,7 +198,27 @@
 	<!-- 클릭한 게시물 정보 얻어오기 -->
 	<select id="selectDoran_no" parameterType="int"
 		resultType="doranvo">
-		SELECT * FROM doran where doran_no = #{doran_no}
+		SELECT D.*, COALESCE(L.dlike, 0) AS dlike,
+		COALESCE(C.dcomment, 0) AS
+		dcomment
+		FROM DORAN D
+		LEFT JOIN (
+		SELECT
+		doran_no, COUNT(*) AS dlike
+		FROM DORANLIKE
+		WHERE doran_no IN (SELECT
+		doran_no FROM DORAN)
+		GROUP BY doran_no
+		) L ON D.doran_no = L.doran_no
+		LEFT JOIN (
+		SELECT doran_no, COUNT(*) AS dcomment
+		FROM comments
+		WHERE
+		doran_no IN (SELECT doran_no FROM DORAN)
+		GROUP BY doran_no
+		) C ON
+		D.doran_no = C.doran_no
+		where D.doran_no=#{doran_no}
 	</select>
 
 	<!-- 좋아요 조회 -->
@@ -233,33 +253,22 @@
 
 	<!-- 댓글 추가 -->
 	<insert id="insertComment" parameterType="commentvo">
-		insert into comments values (#{comment_no}, #{comment_cont}, sysdate,
-		#{doran_no})
+		insert into comments
+		values (#{comment_no}, #{comment_cont}, sysdate,
+		#{doran_no},
+		#{mem_id})
 	</insert>
 
+	<!-- 조회수 증가 -->
+	<update id="updateViewCount" parameterType="int">
+		UPDATE DORAN
+		SET
+		doran_view = doran_view + 1
+		WHERE doran_no = #{doranNo}
+	</update>
 
-	<!-- doran_no에 대한 좋아요 수까지 합한 결과물 SELECT D.*, COALESCE(L.dlikes, 0) AS dlikes 
-		FROM DORAN D LEFT JOIN ( SELECT doran_no, COUNT(*) AS dlikes FROM DORANLIKE 
-		WHERE doran_no IN (SELECT doran_no FROM DORAN) GROUP BY doran_no ) L ON D.doran_no 
-		= L.doran_no order by D.doran_no; -->
-
-	<!-- 조회수 순으로 정렬한 결과 + 좋아요 SELECT D.*, COALESCE(L.dlikes, 0) AS dlikes FROM 
-		DORAN D LEFT JOIN ( SELECT doran_no, COUNT(*) AS dlikes FROM DORANLIKE WHERE 
-		doran_no IN (SELECT doran_no FROM DORAN) GROUP BY doran_no ) L ON D.doran_no 
-		= L.doran_no order by D.doran_view desc; -->
-
-
-	<!-- <update id="empUpdate" parameterType="empvo"> update employees set 
-		first_name= #{first_name}, last_name=#{last_name}, email=#{email}, phone_number=#{phone_number}, 
-		hire_date=#{hire_date}, job_id=#{job_id}, salary=#{salary}, commission_pct=#{commission_pct}, 
-		manager_id=#{manager_id}, department_id=#{department_id} where employee_id=#{employee_id} 
-		</update> <delete id="empDelete" parameterType="int"> delete from employees 
-		where employee_id = #{employee_id} </delete> <insert id="empInsert" parameterType="empvo"> 
-		insert into employees (first_name, last_name, email, phone_number, hire_date, 
-		job_id, salary, commission_pct, pic, manager_id, department_id, employee_id) 
-		values (#{first_name}, #{last_name}, #{email}, #{phone_number}, #{hire_date}, 
-		#{job_id}, #{salary}, #{commission_pct},#{pic}, <if test="manager_id==0"> 
-		null, </if> <if test="manager_id!=0"> #{manager_id}, </if> <if test="department_id==0"> 
-		null, </if> <if test="department_id!=0"> #{department_id}, </if> #{employee_id}) 
-		</insert> -->
+	<delete id="deleteDoran" parameterType="int">
+		delete from doran where doran_no = #{doranNo}
+	</delete>
+	
 </mapper>

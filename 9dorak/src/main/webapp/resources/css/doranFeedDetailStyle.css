@@ -504,6 +504,8 @@
 }
 
 .div-wrapper .input-comments {
+	border-radius: 20px;
+    box-shadow: 2px 1px 4px lightgray;
 	position: absolute;
 	width: 700px;
 	height: 220px;

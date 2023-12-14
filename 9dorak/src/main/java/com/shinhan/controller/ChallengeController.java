@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -62,9 +63,13 @@ public class ChallengeController {
 		ChallengeVO chall = chService.selectByno(challenge.getChallenge_no());
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		int likeCnt = chService.getLike(challenge.getChallenge_no());
+		ChalllikeVO challlike = new ChalllikeVO(loginmem.getMem_id(), challenge.getChallenge_no());
+		int likeCheck = chService.getLikecheck(challlike);
+		System.out.println(likeCheck);
 		model.addAttribute("chall", chall);
 		model.addAttribute("likeCnt", likeCnt);
 		model.addAttribute("mem", loginmem);
+		model.addAttribute("likeCheck", likeCheck);
 		System.out.println(loginmem);
 		return "event/challengeDetail";
 	}
@@ -150,6 +155,26 @@ public class ChallengeController {
 			return "삭제 실패";
 		}
 
+	}
+	
+	@RequestMapping(value = "challengelikeUpdate.do", produces = "text/plain;charset=utf-8")
+	@ResponseBody
+	public String challengelikeUpdate(Model model, HttpSession session, ChalllikeVO challenge, @RequestParam("check") String check){
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		ChalllikeVO challlike = new ChalllikeVO(loginmem.getMem_id(), challenge.getChallenge_no());
+		if (check.equals("1")) {
+			int result = chService.delelelikeChall(challlike);
+			if (result > 0) {
+				return "좋아요 취소";
+			}
+		}
+		else {
+			int result = chService.insertlikeChall(challlike);
+			if (result > 0) {
+				return "좋아요 성공";
+			}
+		}
+		return null;
 	}
 	
 	// challengeLunchBox test

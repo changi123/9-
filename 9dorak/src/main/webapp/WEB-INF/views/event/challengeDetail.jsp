@@ -168,7 +168,14 @@
 			<button class="button1" id="update">수정</button>
 			<button class="button2" id="delete">삭제</button>
 		</c:if>
+		<c:if test="${likeCheck == 1}">
+			<button class="button3" id="like" style="background-color: yellow;">좋아요</button>
+			<input type="hidden" value="1" id="check">
+		</c:if>
+		<c:if test="${likeCheck == 0}">
 			<button class="button3" id="like">좋아요</button>
+			<input type="hidden" value="0" id="check">
+		</c:if>
 		</div>
 	</div>
 	<footer class="footer">
@@ -279,18 +286,35 @@
 	}) // delete
 	
 	$("#like").on("click", function() {
-		alert($("#challenge_no").val());
-		var challenge_no = $("#challenge_no").val();
+		/*  alert($("#challenge_no").val());*/
+		alert($("#check").val())
+		
+ 		var challenge_no = $("#challenge_no").val();
 		var param = {
-				"challenge_no" : challenge_no
+				"challenge_no" : challenge_no,
+				"check" : $("#check").val()
 			}
 		$.ajax({
-			url : "${cpath}/event/challengelikeInsert.do",
+			url : "${cpath}/event/challengelikeUpdate.do",
 			type : "post",
 			data : param,
 			success : function(res) {
 				alert(res);
-				location.href = "${cpath}/event/challenge.do";
+				if(res=="좋아요 성공"){
+				      var likeCntInput = $("#likeCnt");
+				      var currentLikeCnt = parseInt(likeCntInput.val());
+				      var newLikeCnt = currentLikeCnt + 1;
+				      likeCntInput.val(newLikeCnt);
+				      location.reload();
+				}
+				else if(res=="좋아요 취소"){
+				      var likeCntInput = $("#likeCnt");
+				      var currentLikeCnt = parseInt(likeCntInput.val());
+				      var newLikeCnt = currentLikeCnt - 1;
+				      likeCntInput.val(newLikeCnt);		
+				      location.reload();
+				}
+				/* location.href = "${cpath}/event/challenge.do"; */
 			}
 		})
 	});

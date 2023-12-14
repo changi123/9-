@@ -65,4 +65,19 @@ public class ChallengeDAOMybatis {
 		return result;
 	}
 
+	public int getLikecheck(ChalllikeVO challlike) {
+		int result = sqlSession.selectOne(NAMESPACE + "getLikecheck", challlike);
+		return result;
+	}
+
+	public int insertlikeChall(ChalllikeVO challlike) {
+		int result = sqlSession.update(NAMESPACE + "insertlikeChall", challlike);
+		return result;
+	}
+
+	public int delelelikeChall(ChalllikeVO challlike) {
+		int result = sqlSession.update(NAMESPACE + "delelelikeChall", challlike);
+		return result;
+	}
+
 }
