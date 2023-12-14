@@ -342,17 +342,17 @@
 	<script type="text/javascript">
 		var chkCtgr = null;
 
-		//검색하기
+		//카테고리+검색
 		function searchBtnClick(allerCheckList) {
 
-			var allerListJson;
+			/* var allerListJson;
 			var allerArrList = [];
 			if (allerCheckList != null) {
 				allerListJson = JSON.stringify(allerCheckList);
 			} else {
 				allerListJson = JSON.stringify(allerArrList);
-			}
-
+			}*/
+			
 			$.ajax({
 				url : "${cpath}/menu/searchPro.do",
 				type : 'GET',
@@ -416,13 +416,15 @@
 			searchBtnClick();
 		}
 
-		//알러지
+		//알러지+검색
 		$(".allergy-bar button").on("click", function() {
 			//alert($(this).val());
 			$.ajax({
 				url : "${cpath}/menu/searchAllergyCheck.do",
 				type : 'GET',
 				data : {
+					//키워드
+					pro_name : $('#searchTxt').val(),
 					//알러지타입 검색
 					pro_aller : $(this).val()
 				},

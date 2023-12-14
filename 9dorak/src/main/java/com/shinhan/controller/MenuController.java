@@ -55,7 +55,7 @@ public class MenuController {
 	//@ResponseBody
 	public String searchPro(Model model,@RequestParam Map<String, Object> map) throws JsonMappingException, JsonProcessingException {
 		
-		ObjectMapper mapper = new ObjectMapper();
+		//ObjectMapper mapper = new ObjectMapper();
 		ProVO pro = new ProVO();
 		
 		//System.out.println("검색어 :"+(String)map.get("pro_name"));
@@ -108,15 +108,34 @@ public class MenuController {
 		return "menu/menu_ajax";
 	}
 	
+	//알러지+검색
 	@GetMapping("searchAllergyCheck.do")
-	public String searchAllergyCheck(Model model, ProVO pro) {
-		//System.out.println(pro_aller);
-		//@RequestParam("pro_aller") String pro_aller
-		List<ProVO> slist = mService.searchAllergyCheck(pro.getPro_aller());
-		model.addAttribute("slist", slist);
-		
-		return "menu/menu_ajax";
-	}
+	public String searchAllergyCheck(Model model, @RequestParam Map<String, Object> map) {
+	   //System.out.println(pro_aller);
+	   //@RequestParam("pro_aller") String pro_aller
+	   ProVO pro = new ProVO();
+	      
+	   pro.setPro_name((String)map.get("pro_name"));
+	   pro.setPro_aller((String)map.get("pro_aller"));
+	   //System.out.println(pro.getPro_aller());
+	   //System.out.println(pro.getPro_name());
+	      
+	   List<ProVO> slist = mService.searchAllergyCheck(pro);
+	   model.addAttribute("slist", slist);
+	      
+	   return "menu/menu_ajax";
+	 }
+	
+//	//알러지
+//	@GetMapping("searchAllergyCheck.do")
+//	public String searchAllergyCheck(Model model, ProVO pro) {
+//		//System.out.println(pro_aller);
+//		//@RequestParam("pro_aller") String pro_aller
+//		List<ProVO> slist = mService.searchAllergyCheck(pro.getPro_aller());
+//		model.addAttribute("slist", slist);
+//		
+//		return "menu/menu_ajax";
+//	}
 	
 	@GetMapping("menuSpecificReview.do")
 	public String menuSpecificReview(Model model, ProVO pro, HttpSession session) {

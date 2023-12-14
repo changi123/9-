@@ -9,7 +9,7 @@
 		select * from pro
 	</select>
 	
-	<!-- 메뉴 검색 -->
+	<!-- 카테고리 + 검색 -->
 	<select id="selectSearchPro" resultType="provo" parameterType="provo">
 		select *
 		  from pro t1,
@@ -33,13 +33,22 @@
 		select * from pro order by pro_like desc
 	</select>
 	
-	<!-- 알러지 -->
-	<select id="searchAllergyCheck" resultType="provo" parameterType="String">
+	<!-- 알러지 + 검색 -->
+	<select id="searchAllergyCheck" resultType="provo" parameterType="provo">
+		select *
+		  from pro
+		  where pro_aller not in #{pro_aller}
+		  or pro_aller is null
+		<if test="pro_name != null and pro_name != ''" >
+			and t1.pro_name like '%'||#{pro_name}||'%'
+		</if>
+	</select>
+	<!-- <select id="searchAllergyCheck" resultType="provo" parameterType="String">
 		select *
 		from pro
 		where pro_aller not in #{pro_aller}
 		or pro_aller is null
-	</select>
+	</select> -->
 	
 	<!-- 알러지 + 정렬 -->
 	<select id="selectAllOrder" resultType="provo" parameterType="provo">

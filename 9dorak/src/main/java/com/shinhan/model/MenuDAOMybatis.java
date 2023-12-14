@@ -44,10 +44,10 @@ public class MenuDAOMybatis {
 		return plist;
 	}
 
-	public List<ProVO> searchAllergyCheck(String pro_aller) {
-		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", pro_aller);
-		return plist;
-	}
+//	public List<ProVO> searchAllergyCheck(String pro_aller) {
+//		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck", pro_aller);
+//		return plist;
+//	}
 
 	public List<ProVO> selectAllOrder(ProVO pro) {
 		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "selectAllOrder", pro);
@@ -101,6 +101,11 @@ public class MenuDAOMybatis {
 	public int updateReserve(String pro_no) {
 		int result = sqlSession.update(NAMESPACE + "updateProLike", pro_no);
 		return result;
+	}
+
+	public List<ProVO> searchAllergyCheck(ProVO pro) {
+		List<ProVO> plist = sqlSession.selectList(NAMESPACE + "searchAllergyCheck",pro);
+		return plist;
 	}
 	
 //	public BoardVO selectById(int bno) {

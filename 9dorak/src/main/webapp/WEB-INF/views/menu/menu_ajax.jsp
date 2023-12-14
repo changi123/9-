@@ -39,4 +39,23 @@
 	</c:forEach>
 
 </body>
+<script type="text/javascript">
+/* $(".filter button").on("click", function() {
+
+    var a = $("button.selected");
+
+    alert($(this).text());
+
+    // $(".top-categories button.selected");
+    
+    // alert($(".clicked-category"));
+    
+    var element = $("[class*='frame-'][class*='clicked-category']");
+    var childDivText = element.find("div").text();
+    alert(childDivText);
+    
+    
+}); */
+
+</script>
 </html>

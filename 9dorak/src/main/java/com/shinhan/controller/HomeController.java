@@ -49,7 +49,7 @@ public class HomeController {
 	@GetMapping("searchAllergyCheck.do")
 	public String searchAllergyCheck(Model model, ProVO pro) {
 		// @RequestParam("pro_aller") String pro_aller
-		List<ProVO> slist = menuService.searchAllergyCheck(pro.getPro_aller());
+		List<ProVO> slist = menuService.searchAllergyCheck(pro);
 		/* System.out.println("searchAllergyCheck.do"); */
 		model.addAttribute("slist", slist);
 		return "main/main_allergy";

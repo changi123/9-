@@ -31,9 +31,9 @@ public class MenuService {
 		return dao.selectOrderbyLike();
 	}
 
-	public List<ProVO> searchAllergyCheck(String pro_aller) {
-		return dao.searchAllergyCheck(pro_aller);
-	}
+//	public List<ProVO> searchAllergyCheck(String pro_aller) {
+//		return dao.searchAllergyCheck(pro_aller);
+//	}
 
 	public List<ProVO> selectAllOrder(ProVO pro) {
 		return dao.selectAllOrder(pro);
@@ -73,6 +73,10 @@ public class MenuService {
 	
 	public int updateReserve(String pro_no) {
 		return dao.updateReserve(pro_no);
+	}
+
+	public List<ProVO> searchAllergyCheck(ProVO pro) {
+		return dao.searchAllergyCheck(pro);
 	}
 	
 
