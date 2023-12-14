@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.shinhan.dto.CouponVO;
+import com.shinhan.dto.DeliveryVO;
 import com.shinhan.dto.MemDeliveryVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
@@ -54,8 +55,14 @@ public class MyPageController {
 		return "home";
 	}
 	
+
+	// 배송 내역 조회
 	@GetMapping("myDeliveryList.do")
-	public String myDelivery(Model model) {
+	public String myDeliveryList(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		String memId = loginmem.getMem_id();
+		List<DeliveryVO> dlist = mService.AllDeliveryHistory(memId);
+		model.addAttribute("dlist", dlist);
 		return "my/myDeliveryList";
 	}
 	

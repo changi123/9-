@@ -17,7 +17,11 @@ String contextPath = request.getContextPath();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+console.log("${dlist}");
+</script>
 </head>
+
 <body>
 	<div class="div-wrapper">
 		<div class="div">
@@ -98,9 +102,12 @@ String contextPath = request.getContextPath();
 				</button>
 			</div>
 			<div class="frame-4">
+					
+			
 				<div class="frame-5">
 					<div class="frame-6">
 						<div class="text-wrapper-3">2023. 11. 25 주문</div>
+						
 					</div>
 					<div class="frame-7">
 						<div class="frame-6">
@@ -120,6 +127,7 @@ String contextPath = request.getContextPath();
 						</div>
 					</div>
 				</div>
+				
 				<div class="frame-5">
 					<div class="frame-6">
 						<div class="text-wrapper-3">2023. 11. 25 주문</div>

@@ -1,5 +1,7 @@
 package com.shinhan.dto;
 
+import java.sql.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,4 +21,5 @@ public class DeliveryVO {
 	private String delivery_status; // 배송 상태
 	private String delivery_postnum; // 우편번호
 	private int delivery_number; // 송장번호
+	private Date order_date; // 주문 날짜
 }

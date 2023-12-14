@@ -28,6 +28,8 @@
 		<typeAlias type="com.shinhan.dto.PayVO" alias="payvo" />
 		<typeAlias type="com.shinhan.dto.CouponVO" alias="couponvo" />
 		<typeAlias type="com.shinhan.dto.OrderVO" alias="ordervo" />
+		<typeAlias type="com.shinhan.dto.DeliveryVO" alias="deliveryvo" />
+		
 
 	</typeAliases>
 </configuration>

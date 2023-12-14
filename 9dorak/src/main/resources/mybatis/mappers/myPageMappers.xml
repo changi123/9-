@@ -145,23 +145,38 @@
 		and py.pay_status in ('결제 대기','결제 완료')
 	</select>
 
-	
+
 	<!-- 결제취소내역보기 -->
 	<select id="cancelList" parameterType="string" resultType="map">
-	SELECT od.pro_no, p.pro_name, od.orderdetail_price,
-	od.orderdetail_count, py.pay_status, py.pay_date, od.orderdetail_no ,
-	(
-	select proimage_image
-	from proimage
-	where pro_no = od.pro_no
-	and rownum=1)
-	FROM orders o , orderdetail od , pro p ,pay py
-	WHERE o.mem_id = #{mem_id}
-	and(o.order_no = od.order_no )
-	and (od.pro_no = p.pro_no )
-	and (p.pro_no = py.order_no )
-	and py.pay_status = '결제 취소'
+		SELECT od.pro_no, p.pro_name, od.orderdetail_price,
+		od.orderdetail_count, py.pay_status, py.pay_date, od.orderdetail_no ,
+		(
+		select proimage_image
+		from proimage
+		where pro_no = od.pro_no
+		and
+		rownum=1)
+		FROM orders o , orderdetail od , pro p ,pay py
+		WHERE o.mem_id
+		= #{mem_id}
+		and(o.order_no = od.order_no )
+		and (od.pro_no = p.pro_no )
+		and (p.pro_no = py.order_no )
+		and py.pay_status = '결제 취소'
 	</select>
+
+	<!-- 배송 조회 내역 -->
+	<select id="AllDeliveryHistory" parameterType="String"
+		resultType="deliveryvo">
+		SELECT d.*, m.mem_name, o.order_date
+		FROM delivery d
+		JOIN orders o ON d.order_no = o.order_no
+		JOIN mem m ON o.mem_id = m.mem_id
+		WHERE o.mem_id = #{mem_id} AND o.order_status = '주문 완료'
+
+	</select>
+
+
 
 
 </mapper>
