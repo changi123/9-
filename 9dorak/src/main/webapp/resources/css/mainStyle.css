@@ -2165,7 +2165,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -2282,7 +2282,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -2399,7 +2399,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -2525,7 +2525,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -2642,7 +2642,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -2759,7 +2759,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -2885,7 +2885,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -3003,7 +3003,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -3121,7 +3121,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -3248,7 +3248,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -3366,7 +3366,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -3484,7 +3484,7 @@
 	left: -0.500031px;
 	top: -2px;
 	border-radius: Symbol(figma.mixed) px;
-	background-image: url(resources/images/main/sandwich_lunchbox01.png);
+	background-image: url(../images/main/sandwich_lunchbox01.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	cursor:pointer;
@@ -3630,7 +3630,6 @@
 }
 
 a {
-/*     color: var(--bs-link-color); */
    text-decoration: none;
 }
 

@@ -93,30 +93,30 @@
 					</div>
 				</div>
 				<div class=e50_30>
-					<div class=e50_31>
+					<a class=e50_31 href="${cpath}/menu/menuSpecificReview.do?pro_no=${freelist[0].pro_no}">
 						<div class="e50_32"></div>
 						<div class=e50_33>
-							<span class="e50_34">한돈 돼지 김치찜 도시락</span>
+							<span class="e50_34">${freelist[0].pro_name}</span>
 						</div>
-					</div>
-					<div class=e50_35>
+					</a>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${freelist[1].pro_no}" class=e50_35>
 						<div class="e50_36"></div>
 						<div class=e50_37>
-							<span class="e50_38">참치 마요 도시락</span>
+							<span class="e50_38">${freelist[1].pro_name}</span>
 						</div>
-					</div>
-					<div class=e50_39>
+					</a>
+					<a href="${cpath}/menu/menuSpecificReview.do?pro_no=${freelist[2].pro_no}" class=e50_39>
 						<div class="e50_40"></div>
 						<div class=e50_41>
-							<span class="e50_42">쇠고기 도시락</span>
+							<span class="e50_42">${freelist[2].pro_name}</span>
 						</div>
-					</div>
+					</a>
 				</div>
 			</div>
-			<div class=e50_43>
+			<a href="${cpath}/wallet/pay.do" class=e50_43>
 				<div class="e50_44"></div>
 				<span class="e50_45">0원 결제하기</span>
-			</div>
+			</a>
 		</div>
 					<footer class="footer">
 				<div class="footer-company-loco">

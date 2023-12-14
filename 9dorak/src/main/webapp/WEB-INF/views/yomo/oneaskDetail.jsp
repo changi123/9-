@@ -78,7 +78,9 @@
 		<c:if test="${loginmem.mem_id eq 'admin'}">
 			<form action="${pageContext.request.contextPath}/yomo/oneask.do"
 				method="GET">
+				<input type="hidden" name="mem_id" value="${oneask.mem_id}">
 				<input type="hidden" name="oneask_no" value="${oneask.oneask_no}">
+				<input type="hidden" name="oneask_title" value="${oneask.oneask_title}">
 				<input type="text" name="oneask_answer" placeholder="답변을 입력하세요">
 				<input type="submit" value="제출">
 			</form>

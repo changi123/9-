@@ -13,8 +13,7 @@ import lombok.ToString;
 @Getter @Setter
 @ToString
 public class PeopleVO {
-	private int people_no; // 지인 고유 번호
-	private String people_name; //지인 이름
+	private String people_code; // 지인 고유 번호
 	private String people_category; // 지인 구분
 	private Date people_date ; //지인 등록 날짜
 	private String mem_id ; //회원 아이디

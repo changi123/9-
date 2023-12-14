@@ -194,7 +194,7 @@ public class MyPageController {
 	public String pointAndCouponPage(Model model, HttpSession session) {
 		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
 		String mem_id = loginmem.getMem_id();
-		List<ProVO> likeList = mService.getLikeList("aaa");
+		List<ProVO> likeList = mService.getLikeList(mem_id);
 		// 나중에는 로그인한 사람 아이디로 바꾸자
 		model.addAttribute("loginmem", loginmem);
 		model.addAttribute("likeList", likeList);
@@ -282,4 +282,14 @@ public class MyPageController {
 
 		return "redirect:/my/myMenu.do";
 	}
+	
+	
+	@GetMapping("familyReg.do")
+	public String familyReg(Model model, HttpSession session) {
+		MemVO loginmem = (MemVO) session.getAttribute("loginmem");
+		model.addAttribute("mem",loginmem);
+		
+		return "my/familyReg";
+	}
+	
 }

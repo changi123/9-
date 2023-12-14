@@ -22,8 +22,8 @@ public class EventController {
 	private static final Logger logger = LoggerFactory.getLogger(EventController.class);
 
 	@GetMapping("freelunchbox.do") public String event1(Model model, ProVO pro) {
-		List<EventVO> elist = eService.selectAll();
-		model.addAttribute("elist", elist);
+		List<ProVO> freelist = eService.selectFreeAll();
+		model.addAttribute("freelist", freelist);
 		return "event/freelunchbox";
 	 }
 	
@@ -35,14 +35,14 @@ public class EventController {
 	}
 	
 	@GetMapping("friendreco.do")
-	public String event3(Model model) {
+	public String friendreco(Model model) {
 		List<EventVO> elist = eService.selectAll();
 		model.addAttribute("elist", elist);
 		return "event/friendreco";
 	}
 	
 	@GetMapping("friendadd.do")
-	public String event4(Model model) {
+	public String friendadd(Model model) {
 		List<EventVO> elist = eService.selectAll();
 		model.addAttribute("elist", elist);
 		return "event/friendadd";

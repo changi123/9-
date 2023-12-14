@@ -173,9 +173,15 @@ String contextPath = request.getContextPath();
 
 .e154_578 {
 	color: rgba(72.00000330805779, 72.00000330805779, 72.00000330805779, 1);
-	width: 152.17800903320312px; height : 18px; position : absolute; left :
-	193.292969px; top : 0px; font-family : Roboto; text-align : left;
-	font-size : 14px; letter-spacing : 0;
+	width: 152.17800903320312px;
+	height: 18px;
+	position: absolute;
+	left: 193.292969px;
+	top: 0px;
+	font-family: Roboto;
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: 0;
 	line-height: px;
 	height: 18px;
 	position: absolute;
@@ -203,23 +209,41 @@ String contextPath = request.getContextPath();
 
 .e154_580 {
 	width: 15.217805862426758px;
-	height: 23.37931px; position : absolute; left : 167.841797px; top :
-	-2px; background-image : url(/myapp/resources/images/my/image_8.png);
-	background-repeat : no-repeat; background-size : cover; position :
-	absolute; left : 167.841797px; top : -2px; background-image :
-	url(/myapp/resources/images/my/image_8.png); background-repeat :
-	no-repeat; left : 167.841797px; top : -2px; background-image :
-	url(/myapp/resources/images/my/image_8.png); background-repeat :
-	no-repeat; background-size : cover; position : absolute; left :
-	167.841797px; top : -2px; background-image :
-	url(/myapp/resources/images/my/image_8.png); top : -2px;
-	background-image : url(/myapp/resources/images/my/image_8.png);
-	background-repeat : no-repeat; background-size : cover; position :
-	absolute; left : 167.841797px; top : -2px; background-image :
-	url(/myapp/resources/images/my/image_8.png); background-image :
-	url(/myapp/resources/images/my/image_8.png); background-repeat :
-	no-repeat; background-size : cover; position : absolute; left :
-	167.841797px; top : -2px;
+	height: 23.37931px;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-image: url(/myapp/resources/images/my/image_8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 167.841797px;
+	top: -2px;
 	background-image: url(/myapp/resources/images/my/image_8.png);
 	position: absolute;
 	left: 167.841797px;
@@ -412,16 +436,15 @@ String contextPath = request.getContextPath();
 }
 
 .e154_591 {
-	background-color: rgba(255, 255, 255, 1);
 	width: 250px;
-	height: 324px;
+	height: 262px;
 	position: absolute;
 	left: 0px;
 	top: 146px;
-	border-top-left-radius: 16px;
-	border-top-right-radius: 16px;
-	border-bottom-left-radius: 16px;
-	border-bottom-right-radius: 16px;
+	background-color: #ffffff;
+	border-radius: 16px;
+	border: 2px solid;
+	border-color: #e7e7e7;
 }
 
 .154_591 {

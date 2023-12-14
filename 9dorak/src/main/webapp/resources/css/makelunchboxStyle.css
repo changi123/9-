@@ -13,7 +13,7 @@
   overflow: hidden;
   width: 1440px;
   height: 3150px;
-  position: relative;
+/*   position: relative; */
 }
 
 .element .group {
@@ -21,7 +21,8 @@
   width: 536px;
   height: 94px;
   top: 327px;
-  left: 454px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .element .text-wrapper {
@@ -60,6 +61,8 @@
   left: 20px;
   background-color: #eaeaeafc;
   border-radius: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .element .frame {
@@ -587,7 +590,8 @@
   width: 1409px;
   height: 1208px;
   top: 1430px;
-  left: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .element .desktop-quiz-rows {
@@ -851,7 +855,8 @@
   width: 1348px;
   height: 69px;
   top: 1335px;
-  left: 46px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .element .frame-3 {
@@ -1507,4 +1512,47 @@
 
 .footer {
 	top: 0;
+}
+
+#event_menu {
+	margin-top: 100px;
+}
+
+#event_menu ul {
+	width: 686px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#event_menu ul li {
+	float: left;
+	/* width: 20%; */
+	height: 73px;
+	line-height: 50px;
+	text-align: center;
+	list-style-type: none;
+}
+
+#event_menu ul li a {
+	display: block;
+	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
+	text-decoration: none; /* 링크에 밑줄 제거 */
+	color: black; /* 기본 텍스트 색상 지정 */
+	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
+}
+
+#event_menu ul li:nth-child(3) a {
+	color: blue;
+}
+
+#event_menu ul li a:hover {
+	color: blue;
+}
+
+hr {
+	width: 80%;
+	background: #a0a0a0;
+	margin: 0 auto;
+	height: 1px;
+	border: 0;
 }

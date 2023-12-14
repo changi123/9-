@@ -23,6 +23,8 @@ import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.FaqVO;
 import com.shinhan.dto.MemVO;
 import com.shinhan.dto.OneaskVO;
+import com.shinhan.model.MailSendOneAskService;
+import com.shinhan.model.MailSendService;
 import com.shinhan.model.MyPageService;
 import com.shinhan.model.YomoService;
 
@@ -34,6 +36,9 @@ public class YomoController {
 	YomoService yservice;
 	@Autowired
 	MyPageService mService;
+	@Autowired
+	MailSendOneAskService MailSendOneAskService;
+	
 
 	private static final Logger logger = LoggerFactory.getLogger(YomoController.class);
 	
@@ -88,8 +93,8 @@ public class YomoController {
 //		MemVO mem = mService.getMember(loginmem.getMem_id());
 		model.addAttribute("oneask", oneaskvo);
 		model.addAttribute("mem", loginmem);
-		System.out.println(oneaskvo);
-		System.out.println(loginmem);
+//		System.out.println(oneaskvo);
+//		System.out.println(loginmem);
 		return "yomo/oneaskDetail";
 	}
 	
@@ -97,6 +102,16 @@ public class YomoController {
 	public String oneask(Model model, OneaskVO oneask) {
 		List<OneaskVO> olist = yservice.selectOneaskAll();
 		int result = yservice.updateOneask(oneask);
+		
+
+		
+		
+		///////////////////////// 이메일 쏴주자
+		MemVO mem = mService.getMember(oneask.getMem_id());
+		if( mem != null) {
+			String s = MailSendOneAskService.joinEmail(mem.getMem_email(),oneask.getOneask_title());		
+		}
+
 		model.addAttribute("olist", olist);
 		/* System.out.println(oneask); */
 		return "yomo/oneask";

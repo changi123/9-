@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.shinhan.dto.EventVO;
+import com.shinhan.dto.ProVO;
 
 @Repository
 public class EventDAOMybatis {
@@ -23,5 +24,10 @@ public class EventDAOMybatis {
 		System.out.println(elist);
 		logger.info("selectAll :  {}", elist.size());
 		return elist;
+	}
+
+	public List<ProVO> selectFreeAll() {
+		List<ProVO> freelist = sqlSession.selectList(NAMESPACE + "selectFreeAll");
+		return freelist;
 	}
 }

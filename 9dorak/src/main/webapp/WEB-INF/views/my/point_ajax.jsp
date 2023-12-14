@@ -234,14 +234,14 @@ String contextPath = request.getContextPath();
 .e169_532 {
 	background-color: rgba(255, 255, 255, 1);
 	width: 250px;
-	height: 324px;
+	height: 262px;
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	border-top-left-radius: 16px;
-	border-top-right-radius: 16px;
-	border-bottom-left-radius: 16px;
-	border-bottom-right-radius: 16px;
+	background-color: #ffffff;
+	border-radius: 16px;
+	border: 2px solid;
+	border-color: #e7e7e7;
 }
 
 .169_532 {

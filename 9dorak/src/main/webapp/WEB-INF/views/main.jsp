@@ -18,8 +18,8 @@ String contextPath = request.getContextPath();
 	type="text/css" />
 <link rel="stylesheet" href="${cpath}/resources/css/mainStyle.css"
 	type="text/css" />
-<link rel="stylesheet" href="${cpath}/resources/css/myPageStyle.css"
-	type="text/css" />
+<%-- <link rel="stylesheet" href="${cpath}/resources/css/myPageStyle.css"
+	type="text/css" /> --%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!--아이콘-->
@@ -135,20 +135,20 @@ String contextPath = request.getContextPath();
 	<div class=e1433_2553>
 		<span class="e1433_2554"> <a
 			href="${pageContext.request.contextPath}/menu/menu.do"
-			style="color: white;">전체 메뉴 보기</a>
+			style="color: white; text-decoration: none;">전체 메뉴 보기</a>
 		</span>
 	</div>
 	<div class=e1433_2555>
 		<span class="e1433_2556"> <a
 			href="${pageContext.request.contextPath}/menu/menu.do"
-			style="color: white;"> <span>전체 메뉴 보기</span>
+			style="color: white; text-decoration: none;"> <span>전체 메뉴 보기</span>
 		</a>
 		</span>
 	</div>
 	<div class=e1433_2557>
 		<span class="e1433_2558"> <a
 			href="${pageContext.request.contextPath}/menu/menu.do"
-			style="color: white;"> <span>전체 메뉴 보기</span></a>
+			style="color: white; text-decoration: none;"> <span>전체 메뉴 보기</span></a>
 		</span>
 	</div>
 

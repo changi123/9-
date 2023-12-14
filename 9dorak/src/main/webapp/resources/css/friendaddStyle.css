@@ -174,22 +174,22 @@ li {
 }
 
 #event_menu ul {
-	width: 800px;
+	width: 686px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
 #event_menu ul li {
 	float: left;
-	width: 20%;
-	height: 50px;
+	/* width: 20%; */
+	height: 73px;
 	line-height: 50px;
 	text-align: center;
 }
 
 #event_menu ul li a {
 	display: block;
-	padding: 10px; /* 상하좌우에 동일한 padding 값 적용 */
+	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
 	text-decoration: none; /* 링크에 밑줄 제거 */
 	color: black; /* 기본 텍스트 색상 지정 */
 	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
@@ -207,7 +207,7 @@ hr {
 	width: 80%;
 	background: #a0a0a0;
 	margin: 0 auto;
-	height: 2px;
+	height: 1px;
 	border: 0;
 }
 
@@ -822,7 +822,7 @@ hr {
 	width: 100%;
 	height: 104px;
 	text-align: center;
-	margin-top: 90px;
+	margin-top: 73px;
 }
 
 .e62_326 {
@@ -842,11 +842,13 @@ hr {
 }
 
 .e62_328 {
+	position: relative;
 	/*color: #5F5F5F;*/
 	/*text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
 	font-weight: 700;
 	text-align: center;
 	font-size: 1.6rem;
+	top: -31px;
 }
 
 .e62_465 {
@@ -900,9 +902,9 @@ hr {
 	position: absolute;
 	left: 45%;
 	transform: translateX(-50%);
-	top: 250px;
+	top: 222px;
 	background: url(
-	'../images/man_woman2.png');
+ '../images/event/man_woman2.png');
 	background-size: cover;
 }
 

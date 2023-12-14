@@ -201,46 +201,46 @@ li{
 	list-style: none;
 }
 
-#event_menu{
+#event_menu {
 	margin-top: 100px;
 }
 
 #event_menu ul {
-	width: 800px;
+	width: 686px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
-#event_menu ul li{
+#event_menu ul li {
 	float: left;
-	width: 20%;
-	height: 50px;
+	/* width: 20%; */
+	height: 73px;
 	line-height: 50px;
 	text-align: center;
 }
 
 #event_menu ul li a {
-    display: block;
-    padding: 10px; /* 상하좌우에 동일한 padding 값 적용 */
-    text-decoration: none; /* 링크에 밑줄 제거 */
-    color: black; /* 기본 텍스트 색상 지정 */
-    transition: color 0.3s; /* hover 효과 부드럽게 적용 */
+	display: block;
+	padding: 27px; /* 상하좌우에 동일한 padding 값 적용 */
+	text-decoration: none; /* 링크에 밑줄 제거 */
+	color: black; /* 기본 텍스트 색상 지정 */
+	transition: color 0.3s; /* hover 효과 부드럽게 적용 */
 }
 
 #event_menu ul li:nth-child(4) a {
-  color: blue;  /* 두 번째 a 태그에만 파란색을 적용합니다 */
+	color: blue; /* 두 번째 a 태그에만 파란색을 적용합니다 */
 }
 
 #event_menu ul li a:hover {
-    color: blue;
+	color: blue;
 }
 
 hr {
-    width: 80%;
-    background: #a0a0a0;
-    margin: 0 auto;
-    height: 2px;
-    border: 0;
+	width: 80%;
+	background: #a0a0a0;
+	margin: 0 auto;
+	height: 1px;
+	border: 0;
 }
 
 .62_324 { 
@@ -797,11 +797,12 @@ hr {
 	/* top:379px; */
 	translate: left(-50%);
 }
+
 .e62_325 {
 	width: 100%;
-    height: 104px;
-    text-align: center;
-    margin-top: 90px;
+	height: 104px;
+	text-align: center;
+	margin-top: 73px;
 }
 .e62_326 {
 	/* width:820px; */
@@ -818,9 +819,11 @@ hr {
     font-weight: 700;
 }
 .e62_328 {
+	position: relative;
 	font-weight: 700;
-    text-align: center;
-    font-size: 1.6rem;
+	text-align: center;
+	font-size: 1.6rem;
+	top: -34px;
 }
 .e62_465 {
     font-weight: 800;
@@ -830,7 +833,7 @@ hr {
     height: 30px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-45%);
     top: 1123.357666015625px;
     text-align: left;
 }
@@ -864,8 +867,8 @@ hr {
 	left: 50%;
 	transform: translateX(-50%);
 	top: 250px;
-	background:url(
-	'../images/man_woman.png');
+	background: url(
+ '../images/event/man_woman.png');
 	background-size: cover;
 }
 .e62_357 { 

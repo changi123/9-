@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shinhan.dto.EventVO;
+import com.shinhan.dto.ProVO;
 
 @Service
 public class EventService {
@@ -15,5 +16,9 @@ public class EventService {
 
 	public List<EventVO> selectAll() {
 		return dao.selectAll();
+	}
+
+	public List<ProVO> selectFreeAll() {
+		return dao.selectFreeAll();
 	}	
 }

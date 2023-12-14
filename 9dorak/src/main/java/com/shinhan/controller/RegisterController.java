@@ -75,7 +75,7 @@ public class RegisterController {
 
 	@RequestMapping(value = "codeCheck.do", produces = "text/plain;charset=utf-8")
 	@ResponseBody
-	public String codeCheck(String mem_code) {
+	public String codeCheck(String mem_code, HttpSession session) {
 		int result = rService.codeCheck(mem_code);
 		if (result == 1) {
 			return "true";

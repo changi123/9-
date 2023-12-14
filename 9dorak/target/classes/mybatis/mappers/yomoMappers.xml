@@ -3,16 +3,38 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.firstzone.yomo">
-<!--  게시글 리스트  -->
-<select id="selectAll" resultType="annovo"> select * from anno </select>
-<select id="selectByno" resultType="annovo" parameterType="int"> select * from anno where anno_no = #{anno_no} </select>
-<select id="searchYomo" resultType="annovo" parameterType="String"> SELECT * FROM anno WHERE anno_title LIKE '%'||#{anno_title}||'%' </select>
-<select id="selectOrderbyView" resultType="annovo"> select * from anno order by anno_view desc </select>
-<select id="selectOrderbyNew" resultType="annovo"> select * from anno order by anno_date desc </select>
-<select id="selectFaqAll" resultType="faqvo"> select * from faq </select>
-<select id="selectBynoOneask" resultType="oneaskvo" parameterType="int"> select * from oneask where oneask_no = #{oneask_no} </select>
-<select id="selectOneaskAll" resultType="oneaskvo"> select * from oneask </select>
-<select id="searchOneask" resultType="oneaskvo" parameterType="String"> SELECT * FROM oneask WHERE oneask_title LIKE '%'||#{oneask_title}||'%' </select>
-<select id="selectOrderbyNewOneask" resultType="oneaskvo"> select * from oneask order by oneask_date desc </select>
-<insert id="insertOneask" parameterType="oneaskvo"> INSERT INTO oneask ( oneask_no, oneask_title, oneask_cont, oneask_date, oneask_image, oneask_status, mem_id ) VALUES ( oneask_seq.NEXTVAL, #{oneask_title}, #{oneask_cont}, sysdate, #{oneask_image}, '문의 접수', #{mem_id} ) </insert>
+	<!-- 게시글 리스트 -->
+	<select id="selectAll" resultType="annovo"> select * from anno </select>
+	<select id="selectByno" resultType="annovo" parameterType="int">
+		select * from anno where anno_no = #{anno_no} </select>
+	<select id="searchYomo" resultType="annovo"
+		parameterType="String"> SELECT * FROM anno WHERE anno_title LIKE
+		'%'||#{anno_title}||'%' </select>
+	<select id="selectOrderbyView" resultType="annovo"> select * from anno
+		order by anno_view desc </select>
+	<select id="selectOrderbyNew" resultType="annovo"> select * from anno
+		order by anno_date desc </select>
+	<select id="selectFaqAll" resultType="faqvo"> select * from faq </select>
+	<select id="selectBynoOneask" resultType="oneaskvo"
+		parameterType="int"> select * from oneask where oneask_no = #{oneask_no}
+	</select>
+	<select id="selectOneaskAll" resultType="oneaskvo"> select * from oneask
+	</select>
+	<select id="searchOneask" resultType="oneaskvo"
+		parameterType="String"> SELECT * FROM oneask WHERE oneask_title LIKE
+		'%'||#{oneask_title}||'%' </select>
+	<select id="selectOrderbyNewOneask" resultType="oneaskvo"> select * from
+		oneask order by oneask_date desc </select>
+	<insert id="insertOneask" parameterType="oneaskvo"> INSERT INTO oneask (
+		oneask_no, oneask_title, oneask_cont, oneask_date, oneask_image,
+		oneask_status, mem_id ) VALUES ( oneask_seq.NEXTVAL, #{oneask_title},
+		#{oneask_cont}, sysdate, #{oneask_image}, '문의 접수', #{mem_id} )
+	</insert>
+	<update id="updateOneask" parameterType="oneaskvo">
+		update oneask
+		set
+		oneask_answer=#{oneask_answer}
+		where
+		oneask_no=#{oneask_no}
+	</update>
 </mapper>

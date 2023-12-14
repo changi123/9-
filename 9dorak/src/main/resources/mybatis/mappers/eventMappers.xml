@@ -7,5 +7,9 @@
 	<select id="selectAll" resultType="eventvo">
 		select * from event
 	</select>
+	
+	<select id="selectFreeAll" resultType="provo">
+		select * from pro where pro_free = 'F'
+	</select>
 
 </mapper>

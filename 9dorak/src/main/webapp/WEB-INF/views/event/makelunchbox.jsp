@@ -24,9 +24,6 @@ String contextPath = request.getContextPath();
 <title>9도락</title>
 </head>
 <body>
-	<div class="screen">
-		<div class="div">
-
 			<header class="header">
 				<div class="top-nav">
 					<div class="navbar">
@@ -85,33 +82,30 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</header>
-
-
-
-
-
-
+	<div class="screen">
 			<div class="element">
 				<div class="div">
 
-					<div class="group-18">
-						<div class="date">
-							<div class="navbarChall">
-								<div class="text-wrapper-14">챌린지 ZONE</div>
-								<div class="text-wrapper-14">도시락 무료 체험</div>
-								<div class="element-sep">도시락 만들9</div>
-								<div class="text-wrapper-14">친구 추천</div>
-								<div class="text-wrapper-14">친구 추가</div>
-							</div>
-							<hr>
-						</div>
+					<div id="event_menu">
+						<ul>
+							<li><a
+								href="${pageContext.request.contextPath}/event/challenge.do">챌린지
+									ZONE</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/event/freelunchbox.do">도시락
+									무료 체험</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/event/makelunchbox.do">도시락
+									만들9</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/event/friendreco.do">친구
+									추천</a></li>
+							<li><a
+								href="${pageContext.request.contextPath}/event/friendadd.do">친구
+									추가</a></li>
+						</ul>
 					</div>
-
-
-
-
-
-
+					<hr>
 					<div class="group">
 						<div class="text-wrapper">내가 만든 구도락, 신메뉴로&nbsp;&nbsp;탄생</div>
 						<div class="text-wrapper-2">여러분만의 구도락을 제안하고, 추천해보세요</div>
@@ -143,8 +137,8 @@ String contextPath = request.getContextPath();
 															<span class="span">요리사 <br /></span> <span
 																class="text-wrapper-4">ksween<br /></span> <span
 																class="span"><br />레시피<br /></span> <span
-																class="text-wrapper-4">연어와
-																초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락 <br />
+																class="text-wrapper-4">연어와 초장, 야채를 함께 넣어 비벼먹을 수
+																있는 도시락 <br />
 															</span> <span class="span"><br />추천합니다 <br /></span>
 														</p>
 													</div>
@@ -200,8 +194,8 @@ String contextPath = request.getContextPath();
 														<span class="span">요리사 <br /></span> <span
 															class="text-wrapper-4">ksween<br /></span> <span
 															class="span"><br />레시피<br /></span> <span
-															class="text-wrapper-4">연어와
-															초장, 야채를 함께 넣어 비벼먹을 수 있는 도시락 <br />
+															class="text-wrapper-4">연어와 초장, 야채를 함께 넣어 비벼먹을 수 있는
+															도시락 <br />
 														</span> <span class="span"><br />추천합니다 <br /></span>
 													</p>
 												</div>
@@ -259,7 +253,7 @@ String contextPath = request.getContextPath();
 																	class="text-wrapper-4">ksween<br /></span> <span
 																	class="span"><br />레시피<br /></span> <span
 																	class="text-wrapper-4">양념 돼지 갈비가 들어간 양념만점 도시락<br />
-																<br /></span> <span class="span"><br />추천합니다 <br /></span>
+																	<br /></span> <span class="span"><br />추천합니다 <br /></span>
 															</p>
 														</div>
 													</div>
@@ -453,11 +447,7 @@ String contextPath = request.getContextPath();
 						</div>
 					</div>
 					<div class="frame-wrapper">
-
-
 						<div class="frame-3">
-
-
 							<div class="group-17"
 								onclick="location.href='${pageContext.request.contextPath}/event/challengeLunchBox.do'">
 								<div class="overlap-group-7">
@@ -469,9 +459,6 @@ String contextPath = request.getContextPath();
 									</div>
 								</div>
 							</div>
-
-
-
 							<div class="frame-4">
 								<div class="frame-5">
 									<div class="frame-6">
@@ -488,16 +475,8 @@ String contextPath = request.getContextPath();
 							</div>
 						</div>
 					</div>
-
-
-
-
-
 				</div>
 			</div>
-
-
-
 			<footer class="footer">
 				<div class="footer-company-loco">
 					<div class="footer-company">
@@ -563,7 +542,6 @@ String contextPath = request.getContextPath();
 					</div>
 				</div>
 			</footer>
-		</div>
 	</div>
 	<!-- screen -->
 
