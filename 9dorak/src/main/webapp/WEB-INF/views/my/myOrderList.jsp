@@ -13,6 +13,7 @@
 </style>
 
 <div class="group-5">
+
 	<c:choose>
 		<c:when test="${not empty orderList}">
 			<c:forEach items="${orderList}" var="order">
