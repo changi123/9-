@@ -97,8 +97,7 @@
 						</div>
 						<div class="frame-13">
 							<div class="view-3">
-								<input type="checkbox" class="checkbox" name="selection"
-									onclick="checkBoxSelector()">
+								<input type="checkbox" class="eachBox" id="selectAll" onclick="toggleAllCheckboxes()">
 								<div class="text-wrapper-12">선택해제</div>
 								<div class="text-wrapper-13">선택삭제</div>
 							</div>
@@ -117,7 +116,7 @@
 											<div class="group-2">
 												<!-- 체크 박스 -->
 												<div class="frame-19">
-													<input class="checkbox" type="checkbox" id="checkbox-2-${status.count}" name="selection" onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count},${item.pro_sc})">
+													<input class="eachBox" type="checkbox" id="checkbox-2-${status.count}" name="selection" onchange="basketList(${item.basket_pro_count},${item.pro_no},'${item.pro_name}',${item.pro_price},${status.count},${item.pro_sc})">
 													<div class="text-wrapper-18">${item.mem_name}</div>
 												</div>
 
@@ -321,35 +320,25 @@ function logCheckboxValue(checkbox) {
 	document.body.appendChild(displayDiv);
 }
 
-<%--
-var isChecked = false;
+ function toggleAllCheckboxes() {
+	    const selectAllCheckbox = document.getElementById('selectAll');
+	    const isChecked = selectAllCheckbox.checked;
 
-function checkBoxSelector() {
-	if (isChecked) {
-		selectAll();
-		unselectAll();
-	} else {
-		selectAll();
-	}
-	isChecked = !isChecked;
-}
+	    const checkboxes = document.querySelectorAll('.eachBox');
+	    checkboxes.forEach(checkbox => {
+	        checkbox.checked = isChecked;
+	        const event = new Event('change', { bubbles: true });
+	        checkbox.dispatchEvent(event);
 
-function selectAll() {
-	var checkboxes = document.getElementsByName('selection');
-
-	for (var i = 0; i < checkboxes.length; i++) {
-		checkboxes[i].checked = true;
-	}
-}
-
-function unselectAll() {
-	var checkboxes = document.getElementsByName('selection');
-
-	for (var i = 0; i < checkboxes.length; i++) {
-		checkboxes[i].checked = false;
-	}
-}
---%>
+	    });
+	} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 	var minusClicked = false;
 
