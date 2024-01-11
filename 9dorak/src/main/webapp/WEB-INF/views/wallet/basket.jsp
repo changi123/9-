@@ -99,7 +99,7 @@
 							<div class="view-3">
 								<input type="checkbox" class="eachBox" id="selectAll" onclick="toggleAllCheckboxes()">
 								<div class="text-wrapper-12">선택해제</div>
-								<div class="text-wrapper-13">선택삭제</div>
+								<div class="text-wrapper-13" onclick="deleteSelectedItems()">선택삭제</div>
 							</div>
 
 						</div>
@@ -332,13 +332,6 @@ function logCheckboxValue(checkbox) {
 
 	    });
 	} 
- 
- 
- 
- 
- 
- 
- 
 
 	var minusClicked = false;
 
@@ -486,7 +479,7 @@ function updateCount(myaction, count) {
     	                } 
     	            }
     	        });
-    	 }
+    }
     
 // 주문 정보 목록
 function basketList(quantity, pro_no, pro_name, price, index, pro_sc) {

@@ -290,160 +290,84 @@
 	</div>
 </body>
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
-						$
-								.getScript(
-										"https://cdn.jsdelivr.net/npm/chart.js")
-								.done(
-										function() {
-											Chart.defaults.font.family = 'Wanted Sans Variable';
-											const ctx = document
-													.getElementById('myChart');
-											const myChart = new Chart(
-													ctx,
-													{
-														type : 'bar',
-														data : {
-															labels : [ 
-																	"Sun",
-																	"Mon",
-																	"Tue",
-																	"Wed",
-																	"Thu",
-																	"Fri",
-																	"Sat"
-																	 ],
-															datasets : [ {
-																label : "주별 매출 금액",
-																data : [ 1000000,
-																	19050000,
-																	10006500,
-																	3000000,
-																	5060000,
-																	800900,
-																	9000000 ],
-																backgroundColor : function(
-																		context) {
-																	var chart = context.chart;
-																	var ctx = context.chart.ctx;
-																	var gradient = ctx
-																			.createLinearGradient(
-																					0,
-																					0,
-																					0,
-																					chart.height);
-																	gradient
-																			.addColorStop(
-																					1,
-																					'#775FFC');
-																	gradient
-																			.addColorStop(
-																					0.5,
-																					'#84D9FD');
-																	gradient
-																			.addColorStop(
-																					0,
-																					'#E6EDF9');
-																	return gradient;
-																},
-																borderRadius : 90,
-															} ]
-														},
-														options : {
-															maintainAspectRatio : false,
-															scales : {
-																x : {
-																	barPercentage : 0.9,
-																	categoryPercentage : 0.8,
-																},
-																y : {
-																	beginAtZero : true,
-																},
-															},
-															legend : {
-																display : false,
-															},
-															title : {
-																display : true,
-																text : '매출 금액 in 2024',
-																font : {
-																	family : "Wanted Sans Variable",
-																},
-															},
-															plugins : {
-																legend : {
-																	labels : {
-																		fontFamily : "Wanted Sans Variable",
-																	},
-																},
-															},
-														},
-													});
+	$(document).ready(function() {
+		$.getScript("https://cdn.jsdelivr.net/npm/chart.js").done(function() {
+			Chart.defaults.font.family = 'Wanted Sans Variable';
+			const ctx = document.getElementById('myChart');
+			const myChart = new Chart(ctx,{ type : 'bar', data : { labels : [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+				datasets : [ {
+				label : "주별 매출 금액",
+				data : [ 1000000, 19050000, 10006500, 3000000, 5060000, 800900, 9000000 ],
+				backgroundColor : function(context) {
+					var chart = context.chart;
+					var ctx = context.chart.ctx;
+					var gradient = ctx.createLinearGradient(0,0,0,chart.height);
+					gradient.addColorStop(1,'#775FFC');
+					gradient.addColorStop(0.5,'#84D9FD');
+					gradient.addColorStop(0,'#E6EDF9');
+					return gradient;
+				},
+				borderRadius : 90,
+				}]
+			},
+			options : {
+			maintainAspectRatio : false,
+			scales : {
+			x : { barPercentage : 0.9, categoryPercentage : 0.8,
+				},
+			y : { beginAtZero : true,
+				},
+			},
+			legend : {
+				display : false,
+			},
+			title : {
+				display : true,
+				text : '매출 금액 in 2024',
+				font : {
+					family : "Wanted Sans Variable",
+					},
+				},
+				plugins : {
+				legend : {
+				labels : {
+				fontFamily : "Wanted Sans Variable",
+							},
+							},
+						},
+					},
+				});
 
-										})
-								.fail(
-										function(jqxhr, settings, exception) {
-											console
-													.error(
-															"Failed to load Chart.js library:",
-															exception);
-										});
-					});
+				}).fail(function(jqxhr, settings, exception) {
+				console.error("Failed to load Chart.js library:", exception);
+				});
+			});
 
-	$(document)
-			.ready(
-					function() {
-						$
-								.getScript(
-										"https://cdn.jsdelivr.net/npm/chart.js")
-								.done(
-										function() {
-											Chart.defaults.font.family = 'Wanted Sans Variable';
-											const pie = document
-													.getElementById('pie-chart');
-											const pieChart = new Chart(
-													pie,
-													{
-														type : 'pie',
-														data : {
-															labels : [ "우삼겹 묵은지김치찌개",
-																	"제주모자반 미역국",
-																	"꽃게애호박 된장찌개",
-																	"특선 LA갈비구이" ],
-															datasets : [ {
-																label : "주문 건수",
-																backgroundColor : [
-																		"#FFBADF",
-																		"#FF766C",
-																		"#6FACFF",
-																		"#74E1FF" ],
-																data : [ 250,
-																		95,
-																		75,
-																		60 ]
-															} ]
-														},
-														options : {
-															title : {
-																display : true,
-																text : '가장 많이 팔린 상품',
-																font : {
-																	family : "Wanted Sans Variable",
-																},
-															}
-														}
-													});
-										})
-								.fail(
-										function(jqxhr, settings, exception) {
-											console
-													.error(
-															"Failed to load Chart.js library:",
-															exception);
-										});
-					});
+	$(document).ready(function() {
+		$.getScript("https://cdn.jsdelivr.net/npm/chart.js").done(function() {
+			Chart.defaults.font.family = 'Wanted Sans Variable';
+			const pie = document.getElementById('pie-chart');
+			const pieChart = new Chart(pie, {
+				type : 'pie',
+				data : {
+				labels : [ "우삼겹 묵은지김치찌개", "제주모자반 미역국", "꽃게애호박 된장찌개", "특선 LA갈비구이" ],
+				datasets : [{
+				label : "주문 건수",
+				backgroundColor : [ "#FFBADF", "#FF766C", "#6FACFF", "#74E1FF" ],
+				data : [ 250, 95, 75, 60 ]
+				}]
+			},
+			options : { title : {
+					display : true,
+					text : '가장 많이 팔린 상품',
+					font : { family : "Wanted Sans Variable",},
+					}
+			}
+		});
+		}).fail(function(jqxhr, settings, exception) {
+			console.error("Failed to load Chart.js library:", exception);
+		});
+	});
 
 	$(".ei815_1066_6_1").on("click", function() {
 		$.ajax({
@@ -466,7 +390,6 @@
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
@@ -478,7 +401,6 @@
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
@@ -490,7 +412,6 @@
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
@@ -502,7 +423,6 @@
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
@@ -514,56 +434,45 @@
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
 	$(".e2099_2475").on("click", function() {
 		$.ajax({
-
 			url : "${cpath}/admin/adminPoint.do",
 			type : "get",
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
 	$(".sales").on("click", function() {
 		$.ajax({
-
 			url : "${cpath}/admin/adminSales.do",
 			type : "get",
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
 	$(".e2099_2470").on("click", function() {
 		$.ajax({
-
 			url : "${cpath}/admin/adminOrder.do",
 			type : "get",
 			success : function(res) {
 				$("body").html(res);
 			}
-
 		})
 	})
 
 	//페이징 처리 함수
 	var $setRows = $('#setRows');
 
-	$setRows
-			.submit(function(e) {
+	$setRows.submit(function(e) {
 				e.preventDefault();
 				var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
-
-				//	    console.log(typeof rowPerPage);
-
 				var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
 				if (!rowPerPage) {
 					alert(zeroWarning);
@@ -599,12 +508,6 @@
 					$pagingLink.removeClass('active');
 					$this.addClass('active');
 
-					// 0 => 0(0*4), 4(0*4+4)
-					// 1 => 4(1*4), 8(1*4+4)
-					// 2 => 8(2*4), 12(2*4+4)
-					// 시작 행 = 페이지 번호 * 페이지당 행수
-					// 끝 행 = 시작 행 + 페이지당 행수
-
 					var currPage = $this.attr('rel');
 					var startItem = currPage * rowPerPage;
 					var endItem = startItem + rowPerPage;
@@ -614,11 +517,9 @@
 							.animate({
 								opacity : 1
 							}, 300);
-
 				});
 
 				$pagingLink.filter(':first').addClass('active');
-
 			});
 
 	$setRows.submit();
@@ -626,7 +527,6 @@
 	$(document).ready(function() {
 		$('#products tbody').on('click', 'tr', function() {
 			var order_no = $(this).find('td:first').text();
-
 			$.ajax({
 				type : 'POST',
 				url : '${cpath}/admin/adminSales.do',

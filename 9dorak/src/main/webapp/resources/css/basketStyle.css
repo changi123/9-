@@ -329,6 +329,7 @@ body {
 	font-size: 30px;
 	text-align: center;
 	line-height: normal;
+	cursor: pointer;
 }
 
 .case .cart-menus {
@@ -507,6 +508,7 @@ body {
 	position: relative;
 	width: 30px;
 	height: 30px;
+	cursor: pointer;
 }
 
 .case .text-wrapper-18 {
