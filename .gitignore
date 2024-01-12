@@ -7,3 +7,4 @@
 9dorak/.project
 application.properties
 application-API-KEY.properties
+*.properties
