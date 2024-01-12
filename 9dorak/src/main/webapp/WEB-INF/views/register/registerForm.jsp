@@ -221,8 +221,7 @@ String contextPath = request.getContextPath();
 
 						if ($("#mem_code").val().length != 0) {
 
-							$
-									.ajax({
+							$.ajax({
 										url : "${pageContext.request.contextPath}/register/codeCheck.do",
 										data : {
 											mem_code : $("#mem_code").val()
@@ -239,17 +238,17 @@ String contextPath = request.getContextPath();
 									});
 						} else {
 							$("form").submit();
-						} // 추천인 코드 체크 + 회원가입
+						}
 					});
 
 	$("#emailCheck").on("click", function(event) {
 
 		const email = $('#mem_email').val();
-		const checkInput = $('.mail-check-input') // 인증번호 입력하는곳 
+		const checkInput = $('.mail-check-input') 
 		$.ajax({
 			type : 'get',
-			//url : '<c:url value ="/user/mailCheck?email="/>' + eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
-			url : '${cpath}/register/emailCheck.do?email=' + email, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+	
+			url : '${cpath}/register/emailCheck.do?email=' + email,
 			success : function(data) {
 
 				console.log("data : " + data);
@@ -258,9 +257,9 @@ String contextPath = request.getContextPath();
 				code = data;
 				alert('인증번호가 전송되었습니다.')
 			}
-		}); // end ajax
+		});  //ajax
 
-	});
+	}); // emailCheck
 	$('.mail-check-input').blur(
 			function() {
 				const inputCode = $(this).val();

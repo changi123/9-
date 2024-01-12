@@ -129,7 +129,6 @@ public class RegisterController {
 	@GetMapping("emailCheck.do")
 	@ResponseBody
 	public String emailCheck(@RequestParam("email") String email) {
-		System.out.println("이메일 인증 이메일 : " + email);
 		return MailSendService.joinEmail(email);
 	}
 

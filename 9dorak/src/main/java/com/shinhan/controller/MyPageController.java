@@ -321,37 +321,26 @@ public class MyPageController {
 	@PostMapping("profileUplode.do")
 	public String profileUplode(Model model, HttpSession session, MultipartFile singleFile,
 			HttpServletRequest request) {
-		System.out.println("방은지");
-//		System.out.println(singleFile);
 		String path = request.getSession().getServletContext().getRealPath("resources");
-		System.out.println("path : " + path);
-//		String root = path + "\\uploadFiles" ;
 		String root = path + "\\upload";
 
 		File file = new File(root);
 
-		// 만약 uploadFiles 폴더가 없으면 생성해라 라는뜻
 		if (!file.exists())
 			file.mkdirs();
 
-		// 업로드할 폴더 설정
 		String originFileName = singleFile.getOriginalFilename();
 		String ext = "";
-		int lastIndex = originFileName.lastIndexOf("."); // 확장자
-		if (lastIndex != -1) { // 확장자가 없다면
+		int lastIndex = originFileName.lastIndexOf(".");
+		if (lastIndex != -1) { 
 			ext = originFileName.substring(lastIndex);
 		}
 
-		// ext를 이용한 나머지 로직 수행
-		String ranFileName = UUID.randomUUID().toString() + ext; // 랜덤값으로 파일의 이름을 준다
+		String ranFileName = UUID.randomUUID().toString() + ext; 
 		File changeFile = new File(root + "\\" + ranFileName);
-
-		// 파일업로드
 		try {
 			singleFile.transferTo(changeFile);
-			System.out.println("파일 업로드 성공");
 		} catch (IllegalStateException | IOException e) {
-			System.out.println("파일 업로드 실패");
 			e.printStackTrace();
 		}
 

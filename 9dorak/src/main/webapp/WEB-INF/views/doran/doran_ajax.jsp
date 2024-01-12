@@ -122,13 +122,14 @@
 	        '${cpath}/resources/images/doran/icon_doran-like-fill.png' :
 	        '${cpath}/resources/images/doran/icon_doran-like-unfill.png';
 	});
-    
+   
     function toggleLike(index) {
         var memId = "${sessionScope.loginmem.mem_id}";
 
         if (!memId || memId.trim() === "") {
             alert("로그인이 필요한 서비스입니다 !");
-            location.href = "${cpath}/login/loginForm.do";
+            window.location.href("${cpath}/login/loginForm.do"); 
+/*             window.location.href = "${cpath}/login/loginForm.do"; */
             return;
         }
 

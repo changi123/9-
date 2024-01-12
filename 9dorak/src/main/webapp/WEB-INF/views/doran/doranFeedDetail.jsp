@@ -101,7 +101,7 @@
 								src="${cpath}/resources/upload/${doran.doran_image}"
 								style="${doran.doran_image==null ? 'display: none;' : ''}" />
 							<p class="p"
-								style="${doran.doran_image==null? 'top: 100px;' : ''}">${doran.doran_cont}</p>
+								style="${doran.doran_image==null? 'top: 150px;' : ''}">${doran.doran_cont}</p>
 							<div class="doran-underInfo"
 								style="${doran.doran_image==null ? 'top: 100px;' : ''}">
 								<div class="doran-review">
