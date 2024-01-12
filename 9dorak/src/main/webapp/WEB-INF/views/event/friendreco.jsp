@@ -17,7 +17,7 @@
 	integrity="sha384-kYPsUbBPlktXsY6/oNHSUDZoTX6+YI51f63jCPEIPFP09ttByAdxd2mEjKuhdqn4"
 	crossorigin="anonymous"></script>
 <script>
-	Kakao.init('744b3913b823c75012d64f9856fdc141'); // 사용하려는 앱의 JavaScript 키 입력
+	Kakao.init('${kakao_admin_key}'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
