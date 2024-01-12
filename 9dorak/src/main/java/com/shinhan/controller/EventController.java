@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.shinhan.dto.AnnoVO;
 import com.shinhan.dto.ChallengeVO;
 import com.shinhan.dto.ChalllikeVO;
 import com.shinhan.dto.EventVO;
@@ -20,6 +19,8 @@ import com.shinhan.dto.MemVO;
 import com.shinhan.dto.ProVO;
 import com.shinhan.model.ChallengeService;
 import com.shinhan.model.EventService;
+
+import lombok.Value;
 
 @Controller
 @RequestMapping("event")
@@ -92,10 +93,14 @@ public class EventController {
 		return "event/lunchboxdetail";
 	}
 	
+//	@Value("#{application-API-KEY['kakao-admin-key']}")
+	private String kakao_admin_key = "744b3913b823c75012d64f9856fdc141";
+	
 	@GetMapping("friendreco.do")
 	public String friendreco(Model model) {
 		List<EventVO> elist = eService.selectAll();
 		model.addAttribute("elist", elist);
+		model.addAttribute("kakao_admin_key", kakao_admin_key);
 		return "event/friendreco";
 	}
 	
