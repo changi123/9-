@@ -287,12 +287,12 @@ String contextPath = request.getContextPath();
 			url : "${cpath}/my/updateMember.do",
 			data : param,
 			success : function(res) {
-				/* alert(res); */
+			
 				location.reload();
 			}
 
 		})
-	}) // 아이디 변경 되는지 확인하자
+	})
 
 	$(".e79_166").on("click", function() {
 		$("form")[0].reset();
@@ -332,14 +332,14 @@ String contextPath = request.getContextPath();
 				type : "post",
 				data : formData,
 				enctype : "multipart/form-data",
-				processData : false, // 필수: FormData를 전송할 때 jQuery가 데이터를 처리하지 않도록 설정
-				contentType : false, // 필수: Content-Type 헤더를 설정하지 않도록 설정
+				processData : false,
+				contentType : false,
 				success : function(res) {
 					window.location.reload();
 				}
 			})
 		}
-	}/// 프로필 사진 변경
+	}
 	
 	
 	$(".e79_427").on("click",function(){
