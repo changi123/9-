@@ -11,6 +11,8 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
@@ -87,10 +89,17 @@ public class PayService {
 	}
 
 	// @Value("${imp_key}")
-	private String impKey = "2473561448647236";
+	//private String impKey = "2473561448647236";
+	
+	@Value("${imp_key}")
+	private String impKey;
+	 
+	 @Value("${imp_secret}")
+	 private String impSecret;
+
 
 	// @Value("${imp_secret}")
-	private String impSecret = "e3h05uZuutCJFe3JxCpFkqH5Qp90bvbNdPUC9j6Szr9uKb79mewNzS74gQgDVgI39qIUajRB58SQ6BTj";
+	//private String impSecret = "e3h05uZuutCJFe3JxCpFkqH5Qp90bvbNdPUC9j6Szr9uKb79mewNzS74gQgDVgI39qIUajRB58SQ6BTj";
 
 	// 유저의 Token을 가져오는 메서드
 	public String getUserToken() throws Exception {
