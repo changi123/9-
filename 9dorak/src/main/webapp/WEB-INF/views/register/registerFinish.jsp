@@ -17,8 +17,7 @@ String contextPath = request.getContextPath();
 	href="${cpath}/resources/images/favicon/favicon.ico">
 <title>9도락</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 	<script>
         $(document).ready(function() {
             const body = $('body')[0];

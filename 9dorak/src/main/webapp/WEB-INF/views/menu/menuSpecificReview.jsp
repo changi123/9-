@@ -711,7 +711,7 @@
 
 		// 로그인 여부 확인
 		if (mem_id == "") {
-			alert("로그인이 필요한 서비스입니다 !11111");
+			alert("로그인이 필요한 서비스입니다 !");
 			window.location.href="${cpath}/login/loginForm.do";
 			return;
 		} else {

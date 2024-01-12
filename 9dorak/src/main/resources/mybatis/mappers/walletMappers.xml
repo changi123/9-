@@ -78,8 +78,7 @@
 		<id column="pro_name" property="pro_name" />
 		<id column="basket_pro_count" property="basket_pro_count" />
 		<id column="pro_price" property="pro_price" />
-		<id column="basket_date" property="basket_date"
-			javaType="java.lang.String" />
+		<id column="basket_date" property="basket_date" javaType="java.lang.String" />
 		<id column="proimage_image" property="proimage_image" />
 		<id column="mem_id" property="mem_id" />
 		<id column="pro_sc" property="pro_sc" />
@@ -147,8 +146,7 @@
 	</select>
 
 	<!-- 나랑 지인 전부 합친 장바구니 목록 -->
-	<select id="allPeopleBasket" parameterType="String"
-		resultMap="basketMap">
+	<select id="allPeopleBasket" parameterType="String" resultMap="basketMap">
 		with ranked_proimages as (
 		select m.mem_id, m.mem_name,
 		b.pro_no, p.pro_name, b.basket_pro_count, p.pro_price, p.pro_sc,

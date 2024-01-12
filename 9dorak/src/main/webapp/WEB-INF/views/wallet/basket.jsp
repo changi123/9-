@@ -109,8 +109,7 @@
 									<div class="frame-14">
 										<div class="frame-15">
 											<!-- 날짜 -->
-											<input type='hidden' value='${status.count}'
-												class='dateIndex' />
+											<input type='hidden' value='${status.count}' class='dateIndex' />
 											<div class="text-wrapper-14" id="dateIndex${status.count}">${item.basket_date}</div>
 
 											<div class="group-2">
@@ -329,7 +328,6 @@ function logCheckboxValue(checkbox) {
 	        checkbox.checked = isChecked;
 	        const event = new Event('change', { bubbles: true });
 	        checkbox.dispatchEvent(event);
-
 	    });
 	} 
 
