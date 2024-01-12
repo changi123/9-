@@ -39,8 +39,10 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@GetMapping("loginForm.do")
-	public String loginForm() {
+	public String loginForm(Model model) {
+		model.addAttribute("kakao_apikey", kakao_apikey);
 		return "login/login";
+		
 	}
 
 	@PostMapping("login.do")
@@ -132,6 +134,7 @@ public class LoginController {
 			return "login/createNewPwd";
 		}
 	}
+	private String kakao_apikey = "5441b1f53765881e55f0aca5e80b8b62";
 	
 	//카카오로그인
 	@RequestMapping(value="kakaoLoginPro.do", method=RequestMethod.POST)
@@ -140,6 +143,7 @@ public class LoginController {
 	    Map <String, Object> resultMap = new HashMap<String, Object>();
 
 	    MemVO kakaoConnectionCheck = lservice.kakaoConnectionCheck(paramMap);
+	    
 	    //일치하는 id 없으면 가입
 	    if(kakaoConnectionCheck == null) {   
 	    	model.addAttribute("registerData", kakaoConnectionCheck);
@@ -171,5 +175,7 @@ public class LoginController {
 		System.out.println("로그인 레지스터폼 .do");
 		return "register/registerType";
 	}
+	
+	
 	
 }
