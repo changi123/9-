@@ -17,6 +17,14 @@
 		<property name="fileEncoding" value="UTF-8" />
 	</bean>
 
+	<!-- <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"
+			value="/WEB-INF/spring/appServlet/oracleInfo.properties" />
+		<property name="fileEncoding" value="UTF-8" />
+	</bean> -->
+
+
 	<!-- 데이터 소스 설정 -->
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource"
@@ -55,7 +63,7 @@
 		<property name="mapperLocations"
 			value="classpath:mybatis/mappers/*Mappers.xml" />
 	</bean>
-	
+
 	<bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"></constructor-arg>

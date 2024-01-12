@@ -88,18 +88,18 @@ public class PayService {
 		
 	}
 
-	// @Value("${imp_key}")
-	//private String impKey = "2473561448647236";
+//	 @Value("${imp_key}")
+//	private String impKey = "2473561448647236";
 	
-	@Value("${imp_key}")
+	@Value("${impKey}")
 	private String impKey;
 	 
-	 @Value("${imp_secret}")
+	 @Value("${impSecret}")
 	 private String impSecret;
 
 
-	// @Value("${imp_secret}")
-	//private String impSecret = "e3h05uZuutCJFe3JxCpFkqH5Qp90bvbNdPUC9j6Szr9uKb79mewNzS74gQgDVgI39qIUajRB58SQ6BTj";
+//	 @Value("${imp_secret}")
+//	private String impSecret = "e3h05uZuutCJFe3JxCpFkqH5Qp90bvbNdPUC9j6Szr9uKb79mewNzS74gQgDVgI39qIUajRB58SQ6BTj";
 
 	// 유저의 Token을 가져오는 메서드
 	public String getUserToken() throws Exception {
