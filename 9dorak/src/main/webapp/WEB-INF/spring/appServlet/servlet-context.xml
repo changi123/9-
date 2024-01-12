@@ -61,6 +61,13 @@
 			</beans:props>
 		</beans:property>
 	</beans:bean>
+<!-- 
+	<beans:bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<beans:property name="location"
+			value="/WEB-INF/spring/Auth.properties" />
+		<beans:property name="fileEncoding" value="UTF-8" />
+	</beans:bean> -->
 
 
 	<context:component-scan
