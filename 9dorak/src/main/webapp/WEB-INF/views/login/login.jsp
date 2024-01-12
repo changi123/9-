@@ -23,7 +23,7 @@
 	src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 <script type="text/javascript">
-	Kakao.init('5441b1f53765881e55f0aca5e80b8b62');
+	Kakao.init('${kakao_apikey}');
 	console.log(Kakao.isInitialized()); // 초기화 판단여부
 
 	//카카오 로그인 후 토큰 값 저장.
@@ -197,6 +197,7 @@
 								onclick="location.href='${pageContext.request.contextPath}/login/findIdForm.do'"
 								type="submit" class="text-wrapper-9">아이디 / 비밀번호 찾기</button>
 						<p id="token-result"></p>
+						
 					</div>
 				</div>
 			</div>
